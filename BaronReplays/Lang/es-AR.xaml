@@ -1,0 +1,895 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    >
+    <system:String x:Key="BR">
+        BaronReplays
+    </system:String>
+    <system:String x:Key="LangCode">
+        es-AR
+    </system:String>
+    <system:String x:Key="MyRecords">
+        Repeticiones
+    </system:String>
+    <system:String x:Key="Settings">
+        Configuración
+    </system:String>
+    <system:String x:Key="AutoStart">
+        Graba automáticamente cuando el juego comienza.
+    </system:String>
+    <system:String x:Key="LoLExePath">
+        League of Legends.exe
+    </system:String>
+    <system:String x:Key="Select">
+        Elegir
+    </system:String>
+    <system:String x:Key="RecordSavePath">
+        Directorio de guardado
+    </system:String>
+    <system:String x:Key="SelectFolder">
+        Elegir
+    </system:String>
+    <system:String x:Key="OpenFolder">
+        Abrir
+    </system:String>
+    <system:String x:Key="RecordFileNameFormat">
+        Nombre de la repetición
+    </system:String>
+    <system:String x:Key="AutoKillLoL">
+        Cerrar LoL luego de grabar (solo en modo espectador).
+    </system:String>
+    <system:String x:Key="AutoShrinkToTaskBar">
+        Minimizar en la barra de tareas al cerrar la ventana.
+    </system:String>
+    <system:String x:Key="StartAtSystemStartup">
+        Empezar con Windows.
+    </system:String>
+    <system:String x:Key="WatchReplay">
+        Mirar
+    </system:String>
+    <system:String x:Key="ShrinkToTaskBarQuestion">
+        ¿Minimizar a la barra de tareas?
+    </system:String>
+    <system:String x:Key="RemainGame">
+        {0} partidas se están grabando. Si aprietas OK, ninguna partida quedara guardada.
+    </system:String>
+    <system:String x:Key="Sure">
+        ¿Estás seguro?
+    </system:String>
+    <system:String x:Key="HaveNewVersion">
+        Hay una nueva versión disponible, presiona aquí para actualizar.
+    </system:String>
+    <system:String x:Key="SpecMode">
+        Modo espectador
+    </system:String>
+    <system:String x:Key="RemainGameStatus">
+        {0} partidas se están grabando.
+    </system:String>
+    <system:String x:Key="Exit">
+        Salir
+    </system:String>
+    <system:String x:Key="BrokenFile">
+        Este archivo esta roto.
+    </system:String>
+    <system:String x:Key="CannotPlay">
+        No se puede reproducir esta partida
+    </system:String>
+    <system:String x:Key="AlreadyPlaying">
+        Se está reproduciendo ahora.
+    </system:String>
+    <system:String x:Key="DirectoryNotExist">
+        La dirección no existe. ¿Desea crear una nueva?
+    </system:String>
+    <system:String x:Key="CreateShortCutOnDesktop">
+        Crear un acceso directo en el escritorio.
+    </system:String>
+    <system:String x:Key="BRAlreadyRunning">
+        BaronReplays ya esta abierto.
+    </system:String>
+    <system:String x:Key="AskSendReport">
+        This system encountered a problem and will now exit. Would you like to restart BaronReplays?
+    </system:String>
+    <system:String x:Key="SendSuccess">
+        Enviado correctamente.
+    </system:String>
+    <system:String x:Key="SendFailed">
+        Error al enviar.
+    </system:String>
+    <system:String x:Key="HomePage">
+        Página principal
+    </system:String>
+    <system:String x:Key="DeleteRecord">
+        Borrar
+    </system:String>
+    <system:String x:Key="RenameReplay">
+        Renombrar
+    </system:String>
+    <system:String x:Key="GameId">
+        Id de la partida:
+    </system:String>
+    <system:String x:Key="GameMode">
+        Modo:
+    </system:String>
+    <system:String x:Key="GameType">
+        Tipo de partida:
+    </system:String>
+    <system:String x:Key="Ranked">
+        Ranked:
+    </system:String>
+    <system:String x:Key="GameLength">
+        Duración:
+    </system:String>
+    <system:String x:Key="CLASSIC">
+        Clásico
+    </system:String>
+    <system:String x:Key="ARAM">
+        ARAM
+    </system:String>
+    <system:String x:Key="ONEFORALL">
+        Uno para todos
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD">
+        Duelo
+    </system:String>
+    <system:String x:Key="ODIN">
+        Dominion
+    </system:String>
+    <system:String x:Key="HEXAKILL">
+        Hexakill
+    </system:String>
+    <system:String x:Key="CUSTOM_GAME">
+        Partida personalizada
+    </system:String>
+    <system:String x:Key="MATCHED_GAME">
+        Sistema de emparejamiento
+    </system:String>
+    <system:String x:Key="GameLengthFormat">
+        {0} : {1:00}
+    </system:String>
+    <system:String x:Key="Downloading">
+        Descargando...
+    </system:String>
+    <system:String x:Key="ErrorDetectGameId">
+        No se pudo obtener id de partida.
+    </system:String>
+    <system:String x:Key="ErrorUnsuppotedRegion">
+        Please choose your region in settings. If you are playing in Co-op vs AI mode, just ignore this message.
+    </system:String>
+    <system:String x:Key="ErrorDetectObKey">
+        No se pudo obtener clave de encripción de observador.
+    </system:String>
+    <system:String x:Key="ErrorGettingContent">
+        No se puede obtener parte de la partida. Talvez es muy tarde para grabar.
+    </system:String>
+    <system:String x:Key="ErrorGettingSpecMode">
+        No se puede obtener información de la partida. Talvez ya esta terminada.
+    </system:String>
+    <system:String x:Key="ErrorDuplicateGame">
+        Esta partida ya se esta grabando.
+    </system:String>
+    <system:String x:Key="RecordFailed">
+        Error al grabar. La razón es {0} 
+    </system:String>
+    <system:String x:Key="Okay">
+        Okay
+    </system:String>
+    <system:String x:Key="SelectLoLExe">
+        Porfavor elija su League of Legends.exe
+    </system:String>
+    <system:String x:Key="SelectedRegion">
+        Región
+    </system:String>
+    <system:String x:Key="AboutVersion">
+        Versión: {0}
+    </system:String>
+    <system:String x:Key="AskUpdate">
+        Una actualización está disponible. BaronReplays se reiniciara durante la actualización. Se perderán todos las partidas que se estén grabando. ¿Desea continuar?
+    </system:String>
+    <system:String x:Key="NewestVersion">
+        Esta es la versión mas nueva.
+    </system:String>
+    <system:String x:Key="File">
+        Archivo
+    </system:String>
+    <system:String x:Key="Open">
+        Abrir partida
+    </system:String>
+    <system:String x:Key="Function">
+        Funciones
+    </system:String>
+    <system:String x:Key="CheckForUpdate">
+        Buscar actualizaciones
+    </system:String>
+    <system:String x:Key="Help">
+        Ayuda
+    </system:String>
+    <system:String x:Key="OpenWebsite">
+        Sitio oficial
+    </system:String>
+    <system:String x:Key="BackToNews">
+        Noticias
+    </system:String>
+    <system:String x:Key="AboutBR">
+        Acerca de BaronReplays
+    </system:String>
+    <system:String x:Key="FeaturedGames">
+        Partidas destacadas
+    </system:String>
+    <system:String x:Key="RecordThisGame">
+        Grabar esta partida
+    </system:String>
+    <system:String x:Key="PlayThisGame">
+        Mirar esta partida
+    </system:String>
+    <system:String x:Key="WatchNow">
+        Watch after data prepared?
+    </system:String>
+    <system:String x:Key="SureDelete">
+        {0} sera borrado, ¿desea continuar?
+    </system:String>
+    <system:String x:Key="NetworkError">
+        Hubo un problema de conexión, verifique que su internet esté disponible.
+    </system:String>
+    <system:String x:Key="CannotGetFeaturedGames">
+        No se puede obtener información de partidas destacadas.
+    </system:String>
+    <system:String x:Key="RecordSucceed">
+        La partida se grabo correctamente.
+    </system:String>
+    <system:String x:Key="PleasePlayFirst">
+        Porfavor juegue una partida primero para obtener el archivo automáticamente.
+    </system:String>
+    <system:String x:Key="GameDetail">
+        Detalles de la partida
+    </system:String>
+    <system:String x:Key="QFsearch">
+        Buscar {0} en QuickFind
+    </system:String>
+    <system:String x:Key="TW">
+        Taiwan
+    </system:String>
+    <system:String x:Key="NA1">
+        North America
+    </system:String>
+    <system:String x:Key="EUW1">
+        Europe West
+    </system:String>
+    <system:String x:Key="EUN1">
+        Europe North
+    </system:String>
+    <system:String x:Key="EU">
+        Europe
+    </system:String>
+    <system:String x:Key="KR">
+        Korea
+    </system:String>
+    <system:String x:Key="BR1">
+        Brazil
+    </system:String>
+    <system:String x:Key="TR1">
+        Turkey
+    </system:String>
+    <system:String x:Key="SG">
+        Singapore
+    </system:String>
+    <system:String x:Key="RU">
+        Russia
+    </system:String>
+    <system:String x:Key="LA1">
+        North Latin America
+    </system:String>
+    <system:String x:Key="LA2">
+        South Latin America
+    </system:String>
+    <system:String x:Key="PBE1">
+        Public Beta
+    </system:String>
+    <system:String x:Key="TRRU">
+        Turkey, Russia
+    </system:String>
+    <system:String x:Key="BRLA">
+        Brazil, Latin America
+    </system:String>
+    <system:String x:Key="OC1">
+        Oceanic
+    </system:String>
+    <system:String x:Key="VN">
+        Vietnam
+    </system:String>
+    <system:String x:Key="PH">
+        Philippine
+    </system:String>
+    <system:String x:Key="ID1">
+        Indonesia
+    </system:String>
+    <system:String x:Key="TH">
+        Thailand
+    </system:String>
+    <system:String x:Key="JP1">
+        Japan
+    </system:String>
+    <system:String x:Key="Language">
+        Idioma
+    </system:String>
+    <system:String x:Key="AnalyzeCommand">
+        Analizar comando
+    </system:String>
+    <system:String x:Key="InputCommand">
+        Ingresar comando
+    </system:String>
+    <system:String x:Key="UselessCommand">
+        No hay información de una partida en este comando.
+    </system:String>
+    <system:String x:Key="OpenCommandFile">
+        Abrir archivo de comando
+    </system:String>
+    <system:String x:Key="SelectFile">
+        Porfavor seleccione un archivo.
+    </system:String>
+    <system:String x:Key="Menu_File_OpenCommandFile_Click_Tooltip">
+        Abrir un archivo de comando, usar para sitios como op.gg.
+    </system:String>
+    <system:String x:Key="Menu_File_AnalyzeCommand_Click_Tooltip">
+        Ingresar una linea de comando, usar para sitios como kassad.in or lolnexus.com.
+    </system:String>
+    <system:String x:Key="PickReplaySaveFolder">
+        Seleccionar una carpeta para guardar la partida.
+    </system:String>
+    <system:String x:Key="PickLoLExe">
+        Seleccionar (League of Legends.exe) en tu directorio de instalación de LoL.
+    </system:String>
+    <system:String x:Key="AboutContent"  xml:space="preserve">
+
+BaronReplays es un sistema de grabado para League of Legends. El software es libre para usar y copiar. La ingenieria inversa NO esta permitida.
+        
+Todos los derechos del material relacionado a League of Legends pertenecen a Riot Games.
+        
+Contactenos: ahri@ahri.tw
+
+Precaución: 
+        1.BaronReplays puede NO siempre reproducir de forma completa partidas viejas.
+        2.Las partidas destacadas pueden NO funcionar si difieren con la versión de BaronReplays.
+        
+Donation name list(Order by date):
+        Craig Jones&#x09;&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Johnston​Steve&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Ibarra​Christian&#x09;&#x09;&#x09;$14.04&#x09;USD
+        Zwick ​Andreas&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Felix Garben&#x09;&#x09;&#x09;&#x09;$23.60&#x09;USD
+        vincent Jesus&#x09;&#x09;&#x09;$0.45&#x09;USD
+        ming ho chang&#x09;&#x09;&#x09;$2.58&#x09;USD 
+        Yichao Zhu&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD 
+        matteo burbui&#x09;&#x09;&#x09;$1.61&#x09;USD
+        Raphaël Montmory&#x09;&#x09;&#x09;$0.66&#x09;USD
+        Luckyyen&#x09;&#x09;&#x09;&#x09;$147&#x09;TWD
+        Emmanuel Tiburciod&#x09;&#x09;&#x09;$1.61&#x09;USD
+        Kuo David&#x09;&#x09;&#x09;&#x09;$3.54&#x09;USD
+        Chung Ming Wai Cindy&#x09;&#x09;$11.17&#x09;USD
+        vincent Jesus&#x09;&#x09;&#x09;$0.68&#x09;USD
+        許家誠&#x09;&#x09;&#x09;&#x09;$47.75&#x09;USD
+        EL MEHDI TOUIMI BENJELLOUN&#x09;$0&#x09;USD
+        Maciej Sularz&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Cameron Irby&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Wei-Chieh Kao&#x09;&#x09;&#x09;$2.57&#x09;USD
+        tyler hess&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD
+        TheCarlEffect&#x09;&#x09;&#x09;$10.32&#x09;USD
+        jernej pirs&#x09;&#x09;&#x09;&#x09;$2.57&#x09;USD
+        Firat Akyol&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Thyago Martins Correa&#x09;&#x09;$4.48&#x09;USD
+        Bülent Gerçek&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Daniel Baughman&#x09;&#x09;&#x09;$100&#x09;USD
+        Mikko Kujala&#x09;&#x09;&#x09;$6.39&#x09;USD
+        Paolo Mattera&#x09;&#x09;&#x09;$181&#x09;TWD
+        Jean Marc Sautron&#x09;&#x09;&#x09;$353&#x09;TWD
+
+Translation provider:
+        العربية&#x09;&#x09;by    Abdullah Salma
+        Deutsch&#x09;&#x09;by    Cranken Haus
+        español&#x09;&#x09;by    Gustavo Garcia
+        Español (Argentina)&#x09;by    StyGan gg
+        suomi&#x09;&#x09;by    Reino "SupCom" Kinner
+        français&#x09;&#x09;by    Loïc F. (Cénirion)
+        hrvatski&#x09;&#x09;by    Patrick Margan 
+        Bahasa Indonesia&#x09;by    carl_jotosaon
+        italiano&#x09;&#x09;by    Diego "Maverick" Tarozzi
+        Nederlands&#x09;&#x09;by    Guus Wikkerink (Lick A Brick)
+        polski&#x09;&#x09;by    Pasterz
+        Português&#x09;&#x09;by    Daniel rodrigues 
+        русский&#x09;&#x09;by    Ivan Serpov (Dart Vanya)
+        română&#x09;&#x09;by    Stemate Florentin (undercover42)
+        svenska&#x09;&#x09;by    Amir Daher (Frictional)
+        Türkçe&#x09;&#x09;by    Bugra katrancı (SupremeMaster)
+        TViệt Nam&#x09;&#x09;by    Ngọc Minh(NIG: KingSwan)
+        
+        
+Third party API:
+        
+        CefSharp
+        https://github.com/cefsharp/CefSharp
+        
+        FluorineFx
+        http://www.fluorinefx.com/
+              
+        Json.NET
+        http://json.codeplex.com/
+        
+        SQLite
+        http://www.sqlite.org/
+    </system:String>
+    <system:String x:Key="SummonerName">
+        Nombre del Invocador
+    </system:String>
+    <system:String x:Key="Champion">
+        Campeon
+    </system:String>
+    <system:String x:Key="Year">
+        Año
+    </system:String>
+    <system:String x:Key="Month">
+        Mes
+    </system:String>
+    <system:String x:Key="Day">
+        Día
+    </system:String>
+    <system:String x:Key="Hour">
+        Hora
+    </system:String>
+    <system:String x:Key="Minute">
+        Minuto
+    </system:String>
+    <system:String x:Key="Second">
+        Segundo
+    </system:String>
+    <system:String x:Key="Kill">
+        Matado
+    </system:String>
+    <system:String x:Key="Death">
+        Muerte
+    </system:String>
+    <system:String x:Key="Assist">
+        Asistencia
+    </system:String>
+    <system:String x:Key="KDA">
+        KDA
+    </system:String>
+    <system:String x:Key="WinLose">
+        VictoriaDerrota
+    </system:String>
+    <system:String x:Key="Map">
+        Mapa
+    </system:String>
+    <system:String x:Key="Win">
+        Victoria
+    </system:String>
+    <system:String x:Key="Lose">
+        Derrota
+    </system:String>
+    <system:String x:Key="FormatModifier">
+        Ajustador de formato
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe">
+       Ajuste un nombre default para tus partidas
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe1">
+        1.Los tags pueden usarse en el nombre
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe2">
+        2.Arrastra los tags que queres en el rectangulo
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe3">
+        3.Pre-vista del nombre de una partida
+    </system:String>
+    <system:String x:Key="Save">
+        Guardar
+    </system:String>
+    <system:String x:Key="Cancel">
+        Cancelar
+    </system:String>
+    <system:String x:Key="NoResult">
+        Sin resultado
+    </system:String>
+    <system:String x:Key="BlueTeamWon">
+        Ganó equipo Azul
+    </system:String>
+    <system:String x:Key="PurpleTeamWon">
+        Ganó equipo Rojo
+    </system:String>
+    <system:String x:Key="GameResult">
+        Resultado:
+    </system:String>
+    <system:String x:Key="Spectate">
+        Espectar
+    </system:String>
+    <system:String x:Key="AdvanceReplay">
+        Empezar a reproducir desde los 0 segundos.
+    </system:String>
+    <system:String x:Key="CHAMPIONS_KILLED">
+        Campeones matados
+    </system:String>
+    <system:String x:Key="NUM_DEATHS">
+        Muertes
+    </system:String>
+    <system:String x:Key="ASSISTS">
+        Asistencias
+    </system:String>
+    <system:String x:Key="LARGEST_KILLING_SPREE">
+        Mayor racha de asesinatos
+    </system:String>
+    <system:String x:Key="LARGEST_MULTI_KILL">
+        Mayor Asesinato Multiple
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_DEALT_TO_CHAMPIONS">
+        Daño hecho a Campeones
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS">
+        Daño físico a Campeones
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_DEALT_TO_CHAMPIONS">
+        Daño mágico a Campeones
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_DEALT_TO_CHAMPIONS">
+        Daño verdadero a Campeones
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_DEALT">
+        Daño total
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_DEALT_PLAYER">
+        Daño físico total
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_DEALT_PLAYER">
+        Daño mágico total
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_DEALT_PLAYER">
+        Daño verdadero total
+    </system:String>
+    <system:String x:Key="LARGEST_CRITICAL_STRIKE">
+        Mayor golpe crítico
+    </system:String>
+    <system:String x:Key="TOTAL_HEAL">
+        Curación realizada
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_TAKEN">
+        Daño recibido
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_TAKEN">
+        Daño físico recibido
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_TAKEN">
+        Daño mágico recibido
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_TAKEN">
+        Daño verdadero recibido
+    </system:String>
+    <system:String x:Key="LEVEL">
+        Nivel de Campeon
+    </system:String>
+    <system:String x:Key="GOLD_EARNED">
+        Oro ganado
+    </system:String>
+    <system:String x:Key="TURRETS_KILLED">
+        Torres destruidas
+    </system:String>
+    <system:String x:Key="BARRACKS_KILLED">
+        Inhibidores destruidos
+    </system:String>
+    <system:String x:Key="MINIONS_KILLED">
+        Súbditos matados
+    </system:String>
+    <system:String x:Key="NEUTRAL_MINIONS_KILLED">
+        Monstruos neutrales matados
+    </system:String>
+    <system:String x:Key="TOTAL_TIME_SPENT_DEAD">
+        Tiempo estando muerto
+    </system:String>
+    <system:String x:Key="WARD_PLACED">
+        Centinelas puestos
+    </system:String>
+    <system:String x:Key="WARD_KILLED">
+        Centinelas quitados
+    </system:String>
+    <system:String x:Key="TOTAL_TIME_CROWD_CONTROL_DEALT">
+        TIempo de control de masas hecho
+    </system:String>
+    <system:String x:Key="FileInfo">
+        Informacion de archivo
+    </system:String>
+    <system:String x:Key="ScoreBoard">
+        Tabla de puntuaciones
+    </system:String>
+    <system:String x:Key="Combat">
+        Combate
+    </system:String>
+    <system:String x:Key="DamageDone">
+        Daño hecho
+    </system:String>
+    <system:String x:Key="DamageTakenAndHealed">
+        Daño recibido y curado
+    </system:String>
+    <system:String x:Key="Misc">
+        Misc.
+    </system:String>
+    <system:String x:Key="GameNo">
+        Partida No :
+    </system:String>
+    <system:String x:Key="GameRegion">
+        Región del partida :
+    </system:String>
+    <system:String x:Key="GameVersion">
+        Versión del juego :
+    </system:String>
+    <system:String x:Key="FilePath">
+        Dirección del archivo :
+    </system:String>
+    <system:String x:Key="GameStartTime">
+        Tiempo de inicio :
+    </system:String>
+    <system:String x:Key="GameEndTime">
+        Tiempo final :
+    </system:String>
+    <system:String x:Key="Overview">
+        Overview
+    </system:String>
+    <system:String x:Key="Grid">
+        Grid
+    </system:String>
+    <system:String x:Key="FacebookFansPage">
+        Facebook page
+    </system:String>
+    <system:String x:Key="RecordingGame">
+        Recording match
+    </system:String>
+    <system:String x:Key="NoData">
+        No data in this record
+    </system:String>
+    <system:String x:Key="UpdateNow">
+        Update now
+    </system:String>
+    <system:String x:Key="NotNow">
+        Not now
+    </system:String>
+    <system:String x:Key="DoNotRemind">
+        Never remind
+    </system:String>
+    <system:String x:Key="UpdateNotify">
+        Update notify
+    </system:String>
+    <system:String x:Key="Banned">
+        Banned
+    </system:String>
+    <system:String x:Key="ErrorGetLogPath">
+        Can not get log file path
+    </system:String>
+    <system:String x:Key="MovieEditor">
+        Movie editor
+    </system:String>
+    <system:String x:Key="DragToCut">
+        Drag rectangles to keep a part movie
+    </system:String>
+    <system:String x:Key="Finish">
+        Finish
+    </system:String>
+    <system:String x:Key="MovieSetting">
+        Movie settings
+    </system:String>
+    <system:String x:Key="SelectQuality">
+        Select movie quality
+    </system:String>
+    <system:String x:Key="Lowest">
+        Lowest
+    </system:String>
+    <system:String x:Key="Low">
+        Low
+    </system:String>
+    <system:String x:Key="Medium">
+        Medium
+    </system:String>
+    <system:String x:Key="High">
+        High
+    </system:String>
+    <system:String x:Key="Space30">
+        30MB/min
+    </system:String>
+    <system:String x:Key="Space60">
+        60MB/min
+    </system:String>
+    <system:String x:Key="Space90">
+        90MB/min
+    </system:String>
+    <system:String x:Key="Space120">
+        120MB/min
+    </system:String>
+    <system:String x:Key="NameMovie">
+        Name your movie
+    </system:String>
+    <system:String x:Key="MovieRecordingMode">
+        Movie recording mode
+    </system:String>
+    <system:String x:Key="MovieRecordingTooltip">
+        Movie recording mode will save a video for next time you play League of Legends.
+    </system:String>
+    <system:String x:Key="MovieRecordingSuccessed">
+        Movie recording successed
+    </system:String>
+    <system:String x:Key="MovieRecordingFailed">
+        Movie recording failed
+    </system:String>
+    <system:String x:Key="MovieRecordingPlayNow"  xml:space="preserve">
+        Movie recording successed, play now?
+        
+        Movie position: {0}
+    </system:String>
+    <system:String x:Key="MovieRecordingBackground">
+        Movie is being processing in the background. There will be a notification when finish. Please wait...
+    </system:String>
+    <system:String x:Key="MovieRecording">
+        Movie recording in progress
+    </system:String>
+    <system:String x:Key="ExportMovie">
+        Export
+    </system:String>
+    <system:String x:Key="Search">
+        Search
+    </system:String>
+    <system:String x:Key="MovieSavePath">
+        Movie save path
+    </system:String>
+    <system:String x:Key="SelectRegionTitle">
+        Which LoL server are you on?
+    </system:String>
+    <system:String x:Key="Others">
+        Others...
+    </system:String>
+    <system:String x:Key="GameInfo">
+        Match info
+    </system:String>
+    <system:String x:Key="UrlMessage">
+        Spectate link for BaronReplays users
+    </system:String>
+    <system:String x:Key="CommandLineMessage">
+        Command line for this match
+    </system:String>
+    <system:String x:Key="CopyUrl">
+        Copy link
+    </system:String>
+    <system:String x:Key="CopyCommandLine">
+        Copy command line
+    </system:String>
+    <system:String x:Key="RecordingIssueExist">
+        We have a recording issue in {0} now. We are sorry about that.
+    </system:String>
+    <system:String x:Key="Recommended">
+        Recommended
+    </system:String>
+    <system:String x:Key="Favorite">
+        My Favorite
+    </system:String>
+    <system:String x:Key="OldVersionReplay">
+        This replay doesn't match with current version. Do you want to download the correct League of Legends?
+    </system:String>
+    <system:String x:Key="CameraRotation">
+        Enable camera rotation tool
+    </system:String>
+    <system:String x:Key="CUSTOM">
+        Custom
+    </system:String>
+    <system:String x:Key="NORMAL_5x5_BLIND">
+        Normal 5v5 Blind Pick
+    </system:String>
+    <system:String x:Key="BOT_5x5">
+        Historical Summoner's Rift Coop vs AI
+    </system:String>
+    <system:String x:Key="BOT_5x5_INTRO">
+        Summoner's Rift Coop vs AI Intro Bot
+    </system:String>
+    <system:String x:Key="BOT_5x5_BEGINNER">
+        Summoner's Rift Coop vs AI Beginner
+    </system:String>
+    <system:String x:Key="BOT_5x5_INTERMEDIATE">
+        Historical Summoner's Rift Coop vs AI Intermediate Bot
+    </system:String>
+    <system:String x:Key="NORMAL_3x3">
+        Normal 3v3
+    </system:String>
+    <system:String x:Key="NORMAL_5x5_DRAFT">
+        Normal 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="ODIN_5x5_BLIND">
+        Dominion 5v5 Blind Pick
+    </system:String>
+    <system:String x:Key="ODIN_5x5_DRAFT">
+        Dominion 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="BOT_ODIN_5x5">
+        Dominion Coop vs AI
+    </system:String>
+    <system:String x:Key="RANKED_SOLO_5x5">
+        Ranked Solo 5v5
+    </system:String>
+    <system:String x:Key="RANKED_PREMADE_3x3">
+        Ranked Premade 3v3
+    </system:String>
+    <system:String x:Key="RANKED_PREMADE_5x5">
+        Ranked Premade 5v5
+    </system:String>
+    <system:String x:Key="RANKED_TEAM_3x3">
+        Ranked Team 3v3
+    </system:String>
+    <system:String x:Key="RANKED_TEAM_5x5">
+        Ranked Team 5v5
+    </system:String>
+    <system:String x:Key="BOT_TT_3x3">
+        Twisted Treeline Coop vs AI
+    </system:String>
+    <system:String x:Key="GROUP_FINDER_5x5">
+        Team Builder
+    </system:String>
+    <system:String x:Key="ARAM_5x5">
+        ARAM
+    </system:String>
+    <system:String x:Key="ONEFORALL_5x5">
+        One for All
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD_1x1">
+        Snowdown Showdown 1v1
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD_2x2">
+        Snowdown Showdown 2v2
+    </system:String>
+    <system:String x:Key="SR_6x6">
+        Summoner's Rift 6x6 Hexakill
+    </system:String>
+    <system:String x:Key="URF_5x5">
+        Ultra Rapid Fire
+    </system:String>
+    <system:String x:Key="BOT_URF_5x5">
+        Ultra Rapid Fire games played against AI
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK1">
+        Doom Bots Rank 1
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK2">
+        Doom Bots Rank 2
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK5">
+        Doom Bots Rank 5
+    </system:String>
+    <system:String x:Key="ASCENSION_5x5">
+        Ascension
+    </system:String>
+    <system:String x:Key="KING_PORO_5x5">
+        King Poro
+    </system:String>
+    <system:String x:Key="KINGPORO">
+        King Poro
+    </system:String>
+    <system:String x:Key="COUNTER_PICK">
+        Nemesis
+    </system:String>
+    <system:String x:Key="BILGEWATER_5x5">
+        Black Market Brawlers
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_DRAFT_UNRANKED_5x5">
+        Normal 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_DRAFT_RANKED_5x5">
+        Ranked 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_RANKED_SOLO">
+        Ranked Solo games
+    </system:String>
+    <system:String x:Key="RANKED_FLEX_SR">
+        Ranked Flex
+    </system:String>
+    <system:String x:Key="HideBorder">
+        Hide window decoration
+    </system:String>
+    <system:String x:Key="VideoRecordingExitCheck">
+        You are going to exit movie exporting mode. All the recorded movie will be discard. Are you sure?
+    </system:String>
+    <system:String x:Key="ReportBug">
+        Report a bug
+    </system:String>
+    <system:String x:Key="ReportBugDescription">
+        Please leave your message or suggestion. We will try to fix it. Log files and system information will be sent with your message for helping us solve problems.
+    </system:String>
+</ResourceDictionary>

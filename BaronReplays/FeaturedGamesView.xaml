@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="BaronReplays.FeaturedGamesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BaronReplays"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800" Loaded="UserControl_Loaded" MouseWheel="UserControl_MouseWheel" Background="#FF1F232C" Foreground="White" Padding="0,0">
+    <UserControl.Resources>
+        <local:PlatformIdToName x:Key="PlatformIdToName"/>
+        <local:VisibilityMutex x:Key="VisibilityMutex"/>
+        <Style x:Key="RegionButtonStyle" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="Edge" Style="{StaticResource RoundedClipBorder}" Height="28" BorderBrush="White" Background="#FF171717" CornerRadius="3" Margin="0,0,5,5">
+                            <TextBlock  FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="{Binding Converter={StaticResource PlatformIdToName}}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Edge"  Property="BorderThickness" Value="1" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Edge"  Property="BorderThickness" Value="0" />
+                                <Setter TargetName="Edge"  Property="Background" Value="#FF1A75BB" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button" BasedOn="{StaticResource TriButtonStyle}">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource RoundedClipBorder}" Background="#FF171717" CornerRadius="5" Margin="0,5">
+            <StackPanel >
+                <TextBlock Text="{DynamicResource FeaturedGames}" FontSize="32" Margin="10,0"/>
+                <Rectangle x:Name="LoadingLine" Fill="#FF007AFF" Height="3" Width="0" Stroke="#FF007AFF" HorizontalAlignment="Left" Visibility="Hidden"/>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="PlatformBox" Background="#FF1F232C" ItemContainerStyle="{StaticResource RegionButtonStyle}" ItemsSource="{Binding Source={x:Static local:FeaturedGamesManager.FeaturedPlatform}}" BorderThickness="0" SelectionChanged="PlatformBox_SelectionChanged"/>
+            <Grid Grid.Column="1">
+                <Border Style="{StaticResource RoundedClipBorder}" BorderBrush="#FF007AFF" Grid.Column="1" CornerRadius="10" BorderThickness="0" Padding="0"  Grid.Row="0">
+                    <Grid>
+                        <TextBlock Text="{DynamicResource CannotGetFeaturedGames}" Visibility="{Binding ElementName=Game,Path=Visibility,Converter={StaticResource VisibilityMutex}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24"/>
+                        <local:SingleFeaturedGameView x:Name="Game" Visibility="Hidden"/>
+                    </Grid>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="32" Margin="0,8">
+                    <StackPanel x:Name="SelectPoints" Orientation="Horizontal" Margin="15,0">
+
+                    </StackPanel>
+                    <Button x:Name="Refresh" Style="{StaticResource TriButtonStyle}" Margin="5,0" Width="32" Height="32" Visibility="{Binding ElementName=Game,Path=Visibility}" Click="Refresh_Click">
+                        <local:TriStateImageButton ImagePath="UI/FeaturedGames/refresh.png" IsHitTestVisible="False" Width="32" Height="32"  />
+                    </Button>
+                    <Button Content="{DynamicResource RecordThisGame}" Margin="5,0" Height="32" Visibility="{Binding ElementName=Game,Path=Visibility}"  Style="{StaticResource ButtonStyle}" Click="Button_Click"/>
+                    <Button Content="{DynamicResource PlayThisGame}"  Margin="5,0" Height="32" Visibility="{Binding ElementName=Game,Path=Visibility}"  Style="{StaticResource ButtonStyle}" Click="PlayOnlyButton_Click"/>
+                </StackPanel>
+
+            </Grid>
+            
+        </Grid>
+    </Grid>
+        
+       
+</UserControl>

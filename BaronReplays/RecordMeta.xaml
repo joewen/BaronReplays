@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="BaronReplays.RecordMeta"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BaronReplays"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" FontSize="16">
+    <UserControl.Resources>
+        <local:GameLengthConverter x:Key="GameLengthConverter"/>
+        <Style TargetType="TextBlock" x:Key="TitleText">
+            <Setter Property="Width" Value="160"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical" >
+        <TextBlock Grid.Row="0" Text="{DynamicResource FileInfo}" Foreground="#FF007AFF" FontSize="24" Margin="0,2,0,1"/>
+        <Rectangle Fill="Gray" Height="1" Margin="0,0,0,5"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource GameNo}" Style="{StaticResource TitleText}"/>
+            <TextBlock Text="{Binding GameId}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource GameRegion}" Style="{StaticResource TitleText}"/>
+            <TextBlock Text="{Binding GamePlatform}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource GameVersion}" Style="{StaticResource TitleText}"/>
+            <TextBlock Text="{Binding LoLVersion}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource FilePath}" Style="{StaticResource TitleText}"/>
+            <TextBlock Text="{Binding RelatedFileName}" x:Name="FilePathTextBlock" Cursor="Hand" MouseLeftButtonUp="FilePathTextBlock_MouseLeftButtonUp"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource GameStartTime}" Style="{StaticResource TitleText}"/>
+            <TextBlock Text="{Binding GameStartTime}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource GameEndTime}" Style="{StaticResource TitleText}"/>
+            <TextBlock Text="{Binding GameEndTime}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

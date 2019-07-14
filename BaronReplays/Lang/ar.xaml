@@ -1,0 +1,895 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    >
+    <system:String x:Key="BR">
+        BaronReplays
+    </system:String>
+    <system:String x:Key="LangCode">
+        ar
+    </system:String>
+    <system:String x:Key="MyRecords">
+        التسجيلات
+    </system:String>
+    <system:String x:Key="Settings">
+        الإعدادات
+    </system:String>
+    <system:String x:Key="AutoStart">
+        يتم تسجيل المباراة تلقائياً حالما تبدأ اللعبة.
+    </system:String>
+    <system:String x:Key="LoLExePath">
+        League of Legends.exe
+    </system:String>
+    <system:String x:Key="Select">
+        اختر
+    </system:String>
+    <system:String x:Key="RecordSavePath">
+        مسار حفظ التسجيلات
+    </system:String>
+    <system:String x:Key="SelectFolder">
+        اختر
+    </system:String>
+    <system:String x:Key="OpenFolder">
+        فتح
+    </system:String>
+    <system:String x:Key="RecordFileNameFormat">
+        إسم ملف التسجيل
+    </system:String>
+    <system:String x:Key="AutoKillLoL">
+        اغلق اللعبة حلما تحصل على البيانات الكافية (فعال في حالة مشاهدة لعب الآخرين)
+    </system:String>
+    <system:String x:Key="AutoShrinkToTaskBar">
+        اخف البرنامج في شريط المهام عند اغلاق النافذة
+    </system:String>
+    <system:String x:Key="StartAtSystemStartup">
+        البدأ مع بداية تشغيل النظام.
+    </system:String>
+    <system:String x:Key="WatchReplay">
+        شاهد
+    </system:String>
+    <system:String x:Key="ShrinkToTaskBarQuestion">
+        اخف البرنامج في شريط المهام؟
+    </system:String>
+    <system:String x:Key="RemainGame">
+        {0} لعبة يتم تسجيلها. إن ضغط "نعم"، لن يتم حفظ التسجيل.
+    </system:String>
+    <system:String x:Key="Sure">
+        هل أنت متأكد؟
+    </system:String>
+    <system:String x:Key="HaveNewVersion">
+        يوجد تحديث جديد، اضغط هنا للتحديث.
+    </system:String>
+    <system:String x:Key="SpecMode">
+        نمط المشاهدة
+    </system:String>
+    <system:String x:Key="RemainGameStatus">
+        {0} لعبة يتم تسجيلها.
+    </system:String>
+    <system:String x:Key="Exit">
+        خروج
+    </system:String>
+    <system:String x:Key="BrokenFile">
+        هذا الملف معّطوب.
+    </system:String>
+    <system:String x:Key="CannotPlay">
+        هذا التسجيل لا يمكن تشغيلهُ
+    </system:String>
+    <system:String x:Key="AlreadyPlaying">
+        تم فتحه مسبقاً.
+    </system:String>
+    <system:String x:Key="DirectoryNotExist">
+        المسار المحدد غير موجود.
+        هل ترغب بصُنع مساراً جديد؟
+    </system:String>
+    <system:String x:Key="CreateShortCutOnDesktop">
+        ضع اختصاراً على سطح المكتب.
+    </system:String>
+    <system:String x:Key="BRAlreadyRunning">
+        بارون ريبلايز تم تشغيله مسبقاً.
+    </system:String>
+    <system:String x:Key="AskSendReport">
+        حصل خطأ في النظام، وسيتم الخروج
+        من البرنامج، هل ترغب بإعادة التشغيل؟
+    </system:String>
+    <system:String x:Key="SendSuccess">
+        تم الإرسال بنجاح.
+    </system:String>
+    <system:String x:Key="SendFailed">
+        فشل في الإرسال.
+    </system:String>
+    <system:String x:Key="HomePage">
+        الصفحة الرئيسية
+    </system:String>
+    <system:String x:Key="DeleteRecord">
+        حذف
+    </system:String>
+    <system:String x:Key="RenameReplay">
+        إعادة التسمية
+    </system:String>
+    <system:String x:Key="GameId">
+        هوية المباراة:
+    </system:String>
+    <system:String x:Key="GameMode">
+        نمط المباراة:
+    </system:String>
+    <system:String x:Key="GameType">
+        نوع المباراة:
+    </system:String>
+    <system:String x:Key="Ranked">
+        رانكد: 
+    </system:String>
+    <system:String x:Key="GameLength">
+        مدة المباراة: 
+    </system:String>
+    <system:String x:Key="CLASSIC">
+        Classic
+    </system:String>
+    <system:String x:Key="ARAM">
+        ARAM
+    </system:String>
+    <system:String x:Key="ONEFORALL">
+        One for all
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD">
+        Showdown
+    </system:String>
+    <system:String x:Key="ODIN">
+        Dominion
+    </system:String>
+    <system:String x:Key="HEXAKILL">
+        Hexakill
+    </system:String>
+    <system:String x:Key="CUSTOM_GAME">
+        Custom game
+    </system:String>
+    <system:String x:Key="MATCHED_GAME">
+		نظام المباراة
+    </system:String>
+    <system:String x:Key="GameLengthFormat">
+        {0} : {1:00}
+    </system:String>
+    <system:String x:Key="Downloading">
+        جاري التحميل...
+    </system:String>
+    <system:String x:Key="ErrorDetectGameId">
+        لم يتم التعرف على هوية المباراة.
+    </system:String>
+    <system:String x:Key="ErrorUnsuppotedRegion">
+        الرجاء إختيار السيرفر في الإعدادات. إن كنت تلعب "كوو-آوب" تجاهل هذه الرسالة. 
+    </system:String>
+    <system:String x:Key="ErrorDetectObKey">
+        لا يمكن الحصول على مفتاح تشفيرة المراقب.
+    </system:String>
+    <system:String x:Key="ErrorGettingContent">
+        لم يتم الحصول على محتويات اللعبة. ربما دخلت متأخراً للمباراة.
+    </system:String>
+    <system:String x:Key="ErrorGettingSpecMode">
+        لم يتم الحصول على معلومات اللعبة. هذه المباراة إنتهت بالفعل.
+    </system:String>
+    <system:String x:Key="ErrorDuplicateGame">
+        هذه المباراة يتم تسجيلها بالفعل.
+    </system:String>
+    <system:String x:Key="RecordFailed">
+        فشل في التسجيل. السبب يعود لـ {0}
+    </system:String>
+    <system:String x:Key="Okay">
+        حسنا
+    </system:String>
+    <system:String x:Key="SelectLoLExe">
+        الرجاء اختر League of Legends.exe
+    </system:String>
+    <system:String x:Key="SelectedRegion">
+        السيرفر
+    </system:String>
+    <system:String x:Key="AboutVersion">
+        الإصدار: {0}
+    </system:String>
+    <system:String x:Key="AskUpdate">
+        يوجد تحديثاً متاح. بارونربليز سيقوم بإعادة تشغيل البرنامج أثناء التحديث. لن يتم تسجيل اية مباراة. هل ترغب الإستمرار؟
+    </system:String>
+    <system:String x:Key="NewestVersion">
+       هذه أحدث نسخة حتى الآن.
+    </system:String>
+    <system:String x:Key="File">
+        ملف
+    </system:String>
+    <system:String x:Key="Open">
+        فتح ملف التسجيلات.
+    </system:String>
+    <system:String x:Key="Function">
+        المهام
+    </system:String>
+    <system:String x:Key="CheckForUpdate">
+        تحقق من وجود التحديثات
+    </system:String>
+    <system:String x:Key="Help">
+        مساعدة
+    </system:String>
+    <system:String x:Key="OpenWebsite">
+        الموقع الرسمي
+    </system:String>
+    <system:String x:Key="BackToNews">
+        الأخبار
+    </system:String>
+    <system:String x:Key="AboutBR">
+        عن بارونربليز
+    </system:String>
+    <system:String x:Key="FeaturedGames">
+        المباريات المرشحة
+    </system:String>
+    <system:String x:Key="RecordThisGame">
+        سجّل هذه المباراة
+    </system:String>
+    <system:String x:Key="PlayThisGame">
+        شاهد هذه المباراة
+    </system:String>
+    <system:String x:Key="WatchNow">
+        هل ترغب بالمشاهدة بعد تجهيز البيانات؟
+    </system:String>
+    <system:String x:Key="SureDelete">
+        {0} سيتم حذفه. هل ترغب بالإستمرار؟
+    </system:String>
+    <system:String x:Key="NetworkError">
+        توجد مشكلة في الإتصال. الرجاء التأكد من وجود الانترنت؟
+    </system:String>
+    <system:String x:Key="CannotGetFeaturedGames">
+        لم نتمكن من الحصول على بيانات المباريات المرشحة.
+    </system:String>
+    <system:String x:Key="RecordSucceed">
+        تم حفظ التسجيل بنجاح.
+    </system:String>
+    <system:String x:Key="PleasePlayFirst">
+        الرجاء البدء باللعب ليتم الحصول على المسار تلقائياً.
+    </system:String>
+    <system:String x:Key="GameDetail">
+        نظره عامة.
+    </system:String>
+    <system:String x:Key="QFsearch">
+        البحث عن {0} على QuickFind 
+    </system:String>
+    <system:String x:Key="TW">
+        التايوان
+    </system:String>
+    <system:String x:Key="NA1">
+        أمريكا الشمالية
+    </system:String>
+    <system:String x:Key="EUW1">
+        أوروبا الغربية
+    </system:String>
+    <system:String x:Key="EUN1">
+        أوروبا الشمالية
+    </system:String>
+    <system:String x:Key="EU">
+        أوروبا
+    </system:String>
+    <system:String x:Key="KR">
+        كوريا
+    </system:String>
+    <system:String x:Key="BR1">
+        البرازيل
+    </system:String>
+    <system:String x:Key="TR1">
+        تركيا
+    </system:String>
+    <system:String x:Key="SG">
+        سنغافوره
+    </system:String>
+    <system:String x:Key="RU">
+        روسيا
+    </system:String>
+    <system:String x:Key="LA1">
+        أمريكا اللاتينية الشمالية
+    </system:String>
+    <system:String x:Key="LA2">
+        أمريكا اللاتينية الجنوبية
+    </system:String>
+    <system:String x:Key="PBE1">
+        اصدار بيتا العامة
+    </system:String>
+    <system:String x:Key="TRRU">
+        تركيا، روسيا
+    </system:String>
+    <system:String x:Key="BRLA">
+        البرازيل، أمريكا اللاتينية
+    </system:String>
+    <system:String x:Key="OC1">
+        محيطات
+    </system:String>
+    <system:String x:Key="VN">
+        فيتنام
+    </system:String>
+    <system:String x:Key="PH">
+        الفلبين
+    </system:String>
+    <system:String x:Key="ID1">
+        أندونيسيا
+    </system:String>
+    <system:String x:Key="TH">
+        تايلاند
+    </system:String>
+    <system:String x:Key="JP1">
+        Japan
+    </system:String>
+    <system:String x:Key="Language">
+        اللغة
+    </system:String>
+    <system:String x:Key="AnalyzeCommand">
+        الأوامر التحليلية
+    </system:String>
+    <system:String x:Key="InputCommand">
+        إدخل الأوامر
+    </system:String>
+    <system:String x:Key="UselessCommand">
+        لا توجد معلومات لأي مباراة في هذا الأمر.
+    </system:String>
+    <system:String x:Key="OpenCommandFile">
+        فتح ملف الأوامر
+    </system:String>
+    <system:String x:Key="SelectFile">
+        الرجاء اختيار ملف.
+    </system:String>
+    <system:String x:Key="Menu_File_OpenCommandFile_Click_Tooltip">
+        فتح ملف لأمر، و استخدمه لموقع مثل op.gg
+    </system:String>
+    <system:String x:Key="Menu_File_AnalyzeCommand_Click_Tooltip">
+        ادخل سطر من الأوامر، و يستخدم لموقع مثل kassad.in و lolnexus.com
+    </system:String>
+    <system:String x:Key="PickReplaySaveFolder">
+        اختر ملف لحفظ التسجيلات.
+    </system:String>
+    <system:String x:Key="PickLoLExe">
+        اختر (League of Legends.exe) في مسار ملف تثبيت لول.
+    </system:String>
+    <system:String x:Key="AboutContent"  xml:space="preserve">
+        بارونربليز هو نظام تسجيل للعبة League of Legends. البرنامج مجاني للإستخدام و النسخ. التعديل عليه غير مسموح.
+	
+		جميع حقوق المادة المتعلق باللعبة محفوظة لشركة Riot Games.
+		
+		اتصل بنا على الإيميل: ahri@ahri.tw
+
+تنبيه: 
+        1. بارونربليز لن يقوم بتشغيل التسجيل بالكامل للتسجيلات القديمة دائما.
+		2. المباريات المرشحة قد لا تعمل عندما لا يتتطابق الإصدار.
+        
+Donation name list(Order by date):
+        Craig Jones&#x09;&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Johnston​Steve&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Ibarra​Christian&#x09;&#x09;&#x09;$14.04&#x09;USD
+        Zwick ​Andreas&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Felix Garben&#x09;&#x09;&#x09;&#x09;$23.60&#x09;USD
+        vincent Jesus&#x09;&#x09;&#x09;$0.45&#x09;USD
+        ming ho chang&#x09;&#x09;&#x09;$2.58&#x09;USD 
+        Yichao Zhu&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD 
+        matteo burbui&#x09;&#x09;&#x09;$1.61&#x09;USD
+        Raphaël Montmory&#x09;&#x09;&#x09;$0.66&#x09;USD
+        Luckyyen&#x09;&#x09;&#x09;&#x09;$147&#x09;TWD
+        Emmanuel Tiburciod&#x09;&#x09;&#x09;$1.61&#x09;USD
+        Kuo David&#x09;&#x09;&#x09;&#x09;$3.54&#x09;USD
+        Chung Ming Wai Cindy&#x09;&#x09;$11.17&#x09;USD
+        vincent Jesus&#x09;&#x09;&#x09;$0.68&#x09;USD
+        許家誠&#x09;&#x09;&#x09;&#x09;$47.75&#x09;USD
+        EL MEHDI TOUIMI BENJELLOUN&#x09;$0&#x09;USD
+        Maciej Sularz&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Cameron Irby&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Wei-Chieh Kao&#x09;&#x09;&#x09;$2.57&#x09;USD
+        tyler hess&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD
+        TheCarlEffect&#x09;&#x09;&#x09;$10.32&#x09;USD
+        jernej pirs&#x09;&#x09;&#x09;&#x09;$2.57&#x09;USD
+        Firat Akyol&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Thyago Martins Correa&#x09;&#x09;$4.48&#x09;USD
+        Bülent Gerçek&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Daniel Baughman&#x09;&#x09;&#x09;$100&#x09;USD
+        Mikko Kujala&#x09;&#x09;&#x09;$6.39&#x09;USD
+        Paolo Mattera&#x09;&#x09;&#x09;$181&#x09;TWD
+        Jean Marc Sautron&#x09;&#x09;&#x09;$353&#x09;TWD
+
+Translation provider:
+        العربية&#x09;&#x09;by    Abdullah Salma
+        Deutsch&#x09;&#x09;by    Cranken Haus
+        español&#x09;&#x09;by    Gustavo Garcia
+        Español (Argentina)&#x09;by    StyGan gg
+        suomi&#x09;&#x09;by    Reino "SupCom" Kinner
+        français&#x09;&#x09;by    Loïc F. (Cénirion)
+        hrvatski&#x09;&#x09;by    Patrick Margan 
+        Bahasa Indonesia&#x09;by    carl_jotosaon
+        italiano&#x09;&#x09;by    Diego "Maverick" Tarozzi
+        Nederlands&#x09;&#x09;by    Guus Wikkerink (Lick A Brick)
+        polski&#x09;&#x09;by    Pasterz
+        Português&#x09;&#x09;by    Daniel rodrigues 
+        русский&#x09;&#x09;by    Ivan Serpov (Dart Vanya)
+        română&#x09;&#x09;by    Stemate Florentin (undercover42)
+        svenska&#x09;&#x09;by    Amir Daher (Frictional)
+        Türkçe&#x09;&#x09;by    Bugra katrancı (SupremeMaster)
+        TViệt Nam&#x09;&#x09;by    Ngọc Minh(NIG: KingSwan)
+        
+        
+Third party API:
+        
+        CefSharp
+        https://github.com/cefsharp/CefSharp
+        
+        FluorineFx
+        http://www.fluorinefx.com/
+              
+        Json.NET
+        http://json.codeplex.com/
+        
+        SQLite
+        http://www.sqlite.org/
+    </system:String>
+    <system:String x:Key="SummonerName">
+        اسم اللاعب
+    </system:String>
+    <system:String x:Key="Champion">
+        البطل
+    </system:String>
+    <system:String x:Key="Year">
+        السنة
+    </system:String>
+    <system:String x:Key="Month">
+        الشهر
+    </system:String>
+    <system:String x:Key="Day">
+        اليوم
+    </system:String>
+    <system:String x:Key="Hour">
+        الساعة
+    </system:String>
+    <system:String x:Key="Minute">
+        الدقيقة
+    </system:String>
+    <system:String x:Key="Second">
+        الثانية
+    </system:String>
+    <system:String x:Key="Kill">
+        القتل
+    </system:String>
+    <system:String x:Key="Death">
+        الموت
+    </system:String>
+    <system:String x:Key="Assist">
+        المساعدة
+    </system:String>
+    <system:String x:Key="KDA">
+        KDA
+    </system:String>
+    <system:String x:Key="WinLose">
+        فوز/خسارة
+    </system:String>
+    <system:String x:Key="Map">
+        الخريطة
+    </system:String>
+    <system:String x:Key="Win">
+        فوز
+    </system:String>
+    <system:String x:Key="Lose">
+        خسارة
+    </system:String>
+    <system:String x:Key="FormatModifier">
+        إعدادات الإسم
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe">
+       ضع اسم إفتراضي لإسم ملف التسجيل
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe1">
+        1. أوسمة يمكنك إستخدامها في اسم الملف
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe2">
+        2. اسحب أو اضغط على الأوسمة لوضعها في المستطيل أدناه
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe3">
+        3. مثال على إسم الملف
+    </system:String>
+    <system:String x:Key="Save">
+        حفظ
+    </system:String>
+    <system:String x:Key="Cancel">
+        إلغاء
+    </system:String>
+    <system:String x:Key="NoResult">
+        لا توجد نتائج
+    </system:String>
+    <system:String x:Key="BlueTeamWon">
+        فاز الفريق الأزرق
+    </system:String>
+    <system:String x:Key="PurpleTeamWon">
+        فاز الفريق الأحمر
+    </system:String>
+    <system:String x:Key="GameResult">
+        نتائج المباراة:
+    </system:String>
+    <system:String x:Key="Spectate">
+        مشاهدة
+    </system:String>
+    <system:String x:Key="AdvanceReplay">
+        التسجيل يبدأ من الثانية صفر. (هذه الخاصية يتم تجربتها)
+    </system:String>
+    <system:String x:Key="CHAMPIONS_KILLED">
+        القتلى من الأبطال
+    </system:String>
+    <system:String x:Key="NUM_DEATHS">
+        الموت
+    </system:String>
+    <system:String x:Key="ASSISTS">
+        المساعدة
+    </system:String>
+    <system:String x:Key="LARGEST_KILLING_SPREE">
+        أكبر عدد من القتل بدون الموت
+    </system:String>
+    <system:String x:Key="LARGEST_MULTI_KILL">
+        أكبر عدد من القتل في آن واحد
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_DEALT_TO_CHAMPIONS">
+        الضرر المُحّدث للأبطال
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS">
+        الضرر الجسدي على الأبطال
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_DEALT_TO_CHAMPIONS">
+        الضرر السحري على الأبطال
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_DEALT_TO_CHAMPIONS">
+        الضرر الحقيقي على الأبطال
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_DEALT">
+        الضرر المُحّدث
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_DEALT_PLAYER">
+        الضرر الجسدي المُحّدث
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_DEALT_PLAYER">
+        الضرر السحري المُحّدث 
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_DEALT_PLAYER">
+        الضرر الحقيقي المُحّدث
+    </system:String>
+    <system:String x:Key="LARGEST_CRITICAL_STRIKE">
+        أكبر ضرر حاسم (كرت)
+    </system:String>
+    <system:String x:Key="TOTAL_HEAL">
+        المعالجة 
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_TAKEN">
+        الضرر المتلقى
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_TAKEN">
+        الضرر الجسدي المتلقى
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_TAKEN">
+        الضرر السحري المتلقى
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_TAKEN">
+        الضرر الحقيقي المتلقى
+    </system:String>
+    <system:String x:Key="LEVEL">
+        مستى البطل
+    </system:String>
+    <system:String x:Key="GOLD_EARNED">
+        الذهب المُحَصّل
+    </system:String>
+    <system:String x:Key="TURRETS_KILLED">
+        الأبراج المحطمة
+    </system:String>
+    <system:String x:Key="BARRACKS_KILLED">
+        الإنهبترات المحطمة
+    </system:String>
+    <system:String x:Key="MINIONS_KILLED">
+        المينيون المقتولين
+    </system:String>
+    <system:String x:Key="NEUTRAL_MINIONS_KILLED">
+        وحوش الغابة المقتولة
+    </system:String>
+    <system:String x:Key="TOTAL_TIME_SPENT_DEAD">
+        الوقت المقضي ميتاً
+    </system:String>
+    <system:String x:Key="WARD_PLACED">
+        الإنارات الموضوعه
+    </system:String>
+    <system:String x:Key="WARD_KILLED">
+        الإنارات المحطمة
+    </system:String>
+    <system:String x:Key="TOTAL_TIME_CROWD_CONTROL_DEALT">
+        وقت "الكراود كنترول" المُحدث
+    </system:String>
+    <system:String x:Key="FileInfo">
+        معلومات الملف
+    </system:String>
+    <system:String x:Key="ScoreBoard">
+        لوحة النتائج
+    </system:String>
+    <system:String x:Key="Combat">
+        القتال
+    </system:String>
+    <system:String x:Key="DamageDone">
+        الضرر المنقضى
+    </system:String>
+    <system:String x:Key="DamageTakenAndHealed">
+        الضرر المحدث و المعالج
+    </system:String>
+    <system:String x:Key="Misc">
+        المتنوعات
+    </system:String>
+    <system:String x:Key="GameNo">
+        رقم المباراة : 
+    </system:String>
+    <system:String x:Key="GameRegion">
+        منطقة المباراة : 
+    </system:String>
+    <system:String x:Key="GameVersion">
+        اصدار المباراة :
+    </system:String>
+    <system:String x:Key="FilePath">
+        مسار الملف :
+    </system:String>
+    <system:String x:Key="GameStartTime">
+        وقت بداية المباراة :
+    </system:String>
+    <system:String x:Key="GameEndTime">
+        وقت نهاية المباراة :
+    </system:String>
+    <system:String x:Key="Overview">
+        نظرة عامة
+    </system:String>
+    <system:String x:Key="Grid">
+        شبكة
+    </system:String>
+    <system:String x:Key="FacebookFansPage">
+        صفحة الفيسبوك
+    </system:String>
+    <system:String x:Key="RecordingGame">
+        يتم تسجيل المباراة
+    </system:String>
+    <system:String x:Key="NoData">
+        لا توجد بيانات في هذا التسجيل
+    </system:String>
+    <system:String x:Key="UpdateNow">
+        تحديث الآن
+    </system:String>
+    <system:String x:Key="NotNow">
+        ليس الآن
+    </system:String>
+    <system:String x:Key="DoNotRemind">
+        تجاهل
+    </system:String>
+    <system:String x:Key="UpdateNotify">
+        نبه بالتحديثات
+    </system:String>
+    <system:String x:Key="Banned">
+        محظور
+    </system:String>
+    <system:String x:Key="ErrorGetLogPath">
+        لم تم العثور على مسار ملف السجلات
+    </system:String>
+    <system:String x:Key="MovieEditor">
+        محرر الفلم
+    </system:String>
+    <system:String x:Key="DragToCut">
+        اسحب المستطيلات لإبقاء جزء الفلم
+    </system:String>
+    <system:String x:Key="Finish">
+        انهاء
+    </system:String>
+    <system:String x:Key="MovieSetting">
+        إعدادات الفلم
+    </system:String>
+    <system:String x:Key="SelectQuality">
+        اختر جودة الفلم
+    </system:String>
+    <system:String x:Key="Lowest">
+        منخض جداً
+    </system:String>
+    <system:String x:Key="Low">
+        منخفض
+    </system:String>
+    <system:String x:Key="Medium">
+        متوسط
+    </system:String>
+    <system:String x:Key="High">
+        عالية
+    </system:String>
+    <system:String x:Key="Space30">
+        30MB/دقيقة
+    </system:String>
+    <system:String x:Key="Space60">
+        60MB/دقيقة
+    </system:String>
+    <system:String x:Key="Space90">
+        90MB/دقيقة
+    </system:String>
+    <system:String x:Key="Space120">
+        120MB/دقيقة
+    </system:String>
+    <system:String x:Key="NameMovie">
+        قم بتسميت فلمك
+    </system:String>
+    <system:String x:Key="MovieRecordingMode">
+        نمط تسجيل الفلم
+    </system:String>
+    <system:String x:Key="MovieRecordingTooltip">
+        نمط تسجيل الفلم سيحفظ لك الفديو في المرة القادمة التي تلعب فيها اللعبة.
+    </system:String>
+    <system:String x:Key="MovieRecordingSuccessed">
+        تم تسجيل الفلم بنجاح
+    </system:String>
+    <system:String x:Key="MovieRecordingFailed">
+        فشل تسجيل الفلم
+    </system:String>
+    <system:String x:Key="MovieRecordingPlayNow"  xml:space="preserve">
+        تم تسجيل الفلم بنجاح، اترغب بتشغيله الآن؟      
+        موقع الفلم: {0}
+    </system:String>
+    <system:String x:Key="MovieRecordingBackground">
+        تتم معالجة الفلم حالياً. سيتم إعلامك ريثما يتنهي. الرجاء الإنتظار...
+    </system:String>
+    <system:String x:Key="MovieRecording">
+        تتم معالجة الفلم...
+    </system:String>
+    <system:String x:Key="ExportMovie">
+        تصدير
+    </system:String>
+    <system:String x:Key="Search">
+        بحث
+    </system:String>
+    <system:String x:Key="MovieSavePath">
+        مسار حفظ الفلم
+    </system:String>
+    <system:String x:Key="SelectRegionTitle">
+        في أي سيرفر تتواجد فيه؟
+    </system:String>
+    <system:String x:Key="Others">
+        أخرى...
+    </system:String>
+    <system:String x:Key="GameInfo">
+        معلومات المباراة
+    </system:String>
+    <system:String x:Key="UrlMessage">
+        رابط المشاهدة لمستخدمين بارونربليز
+    </system:String>
+    <system:String x:Key="CommandLineMessage">
+        سطر الآوامر لهذه المباراة
+    </system:String>
+    <system:String x:Key="CopyUrl">
+        نسخ الرابط
+    </system:String>
+    <system:String x:Key="CopyCommandLine">
+        نسخ سطر الأوامر
+    </system:String>
+    <system:String x:Key="RecordingIssueExist">
+        لدينا مشكلة للتسجيل في {0} الآن. نعتذر عن ذالك.
+    </system:String>
+    <system:String x:Key="Recommended">
+        يوصى به
+    </system:String>
+    <system:String x:Key="Favorite">
+        مفضلتي
+    </system:String>
+    <system:String x:Key="OldVersionReplay">
+        هذا التسجيل لا يتتطابق مع الإصدار الحالي. هل ترغب بتنزيل الإصدار الصحيح للعبة؟
+    </system:String>
+    <system:String x:Key="CameraRotation">
+        Enable camera rotation tool
+    </system:String>
+    <system:String x:Key="CUSTOM">
+        Custom
+    </system:String>
+    <system:String x:Key="NORMAL_5x5_BLIND">
+        Normal 5v5 Blind Pick
+    </system:String>
+    <system:String x:Key="BOT_5x5">
+        Historical Summoner's Rift Coop vs AI
+    </system:String>
+    <system:String x:Key="BOT_5x5_INTRO">
+        Summoner's Rift Coop vs AI Intro Bot
+    </system:String>
+    <system:String x:Key="BOT_5x5_BEGINNER">
+        Summoner's Rift Coop vs AI Beginner
+    </system:String>
+    <system:String x:Key="BOT_5x5_INTERMEDIATE">
+        Historical Summoner's Rift Coop vs AI Intermediate Bot
+    </system:String>
+    <system:String x:Key="NORMAL_3x3">
+        Normal 3v3
+    </system:String>
+    <system:String x:Key="NORMAL_5x5_DRAFT">
+        Normal 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="ODIN_5x5_BLIND">
+        Dominion 5v5 Blind Pick
+    </system:String>
+    <system:String x:Key="ODIN_5x5_DRAFT">
+        Dominion 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="BOT_ODIN_5x5">
+        Dominion Coop vs AI
+    </system:String>
+    <system:String x:Key="RANKED_SOLO_5x5">
+        Ranked Solo 5v5
+    </system:String>
+    <system:String x:Key="RANKED_PREMADE_3x3">
+        Ranked Premade 3v3
+    </system:String>
+    <system:String x:Key="RANKED_PREMADE_5x5">
+        Ranked Premade 5v5
+    </system:String>
+    <system:String x:Key="RANKED_TEAM_3x3">
+        Ranked Team 3v3
+    </system:String>
+    <system:String x:Key="RANKED_TEAM_5x5">
+        Ranked Team 5v5
+    </system:String>
+    <system:String x:Key="BOT_TT_3x3">
+        Twisted Treeline Coop vs AI
+    </system:String>
+    <system:String x:Key="GROUP_FINDER_5x5">
+        Team Builder
+    </system:String>
+    <system:String x:Key="ARAM_5x5">
+        ARAM
+    </system:String>
+    <system:String x:Key="ONEFORALL_5x5">
+        One for All
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD_1x1">
+        Snowdown Showdown 1v1
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD_2x2">
+        Snowdown Showdown 2v2
+    </system:String>
+    <system:String x:Key="SR_6x6">
+        Summoner's Rift 6x6 Hexakill
+    </system:String>
+    <system:String x:Key="URF_5x5">
+        Ultra Rapid Fire
+    </system:String>
+    <system:String x:Key="BOT_URF_5x5">
+        Ultra Rapid Fire games played against AI
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK1">
+        Doom Bots Rank 1
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK2">
+        Doom Bots Rank 2
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK5">
+        Doom Bots Rank 5
+    </system:String>
+    <system:String x:Key="ASCENSION_5x5">
+        Ascension
+    </system:String>
+    <system:String x:Key="KING_PORO_5x5">
+        King Poro
+    </system:String>
+    <system:String x:Key="KINGPORO">
+        King Poro
+    </system:String>
+    <system:String x:Key="COUNTER_PICK">
+        Nemesis
+    </system:String>
+    <system:String x:Key="BILGEWATER_5x5">
+        Black Market Brawlers
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_DRAFT_UNRANKED_5x5">
+        Normal 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_DRAFT_RANKED_5x5">
+        Ranked 5v5 Draft Pick
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_RANKED_SOLO">
+        Ranked Solo games
+    </system:String>
+    <system:String x:Key="RANKED_FLEX_SR">
+        Ranked Flex
+    </system:String>
+    <system:String x:Key="HideBorder">
+        Hide window decoration
+    </system:String>
+    <system:String x:Key="VideoRecordingExitCheck">
+        You are going to exit movie exporting mode. All the recorded movie will be discard. Are you sure?
+    </system:String>
+    <system:String x:Key="ReportBug">
+        Report a bug
+    </system:String>
+    <system:String x:Key="ReportBugDescription">
+        Please leave your message or suggestion. We will try to fix it. Log files and system information will be sent with your message for helping us solve problems.
+    </system:String>
+</ResourceDictionary>

@@ -1,0 +1,9 @@
+﻿<Window x:Class="BaronReplays.PopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource BR}" Style="{StaticResource PopupWindowStyle}" MinWidth="200" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <StackPanel Orientation="Vertical" Margin="15,10">
+        <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" Margin="5,5,5,20" TextWrapping="Wrap" TextAlignment="Center"/>
+        <Button Style="{StaticResource PopupWindowTriButtonStyle}" Width="75" Height="25" HorizontalAlignment="Center" Content="{DynamicResource Okay}" Margin="5,0,5,5" Click="Button_Click"/>
+    </StackPanel>
+</Window>

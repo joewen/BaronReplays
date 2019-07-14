@@ -1,0 +1,84 @@
+﻿<UserControl x:Name="SettingView" x:Class="BaronReplays.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BaronReplays"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500" Loaded="SettingView_Loaded" Background="#FF1F232C" Foreground="White" FontSize="14">
+    <UserControl.Resources>
+        <local:RegionToName x:Key="RegionToName" />
+        <Style x:Key="PanelStyle" TargetType="Grid">
+            <Setter Property="Margin" Value="0,3"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="ButtonStyle" BasedOn="{StaticResource TriButtonStyle}" TargetType="Button">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="125"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <Border Style="{StaticResource RoundedClipBorder}" Background="#FF171717" CornerRadius="5" Margin="0,5" Padding="0,0">
+            <TextBlock Text="{DynamicResource Settings}" FontSize="32" Margin="10,0"/>
+        </Border>
+        <Grid Background="#FF171717">
+            <Image Source="UI/ChampionDraws/Heimerdinger.png" Width="302" Height="234" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20" />
+            <Border Style="{StaticResource RoundedClipBorder}"  CornerRadius="5" Margin="0,5" Padding="20,10" VerticalAlignment="Stretch">
+                <StackPanel>
+                    <Grid Style="{StaticResource PanelStyle}">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Text="{DynamicResource LoLExePath}" VerticalAlignment="Center" Width="150"/>
+                            <TextBox Text="{Binding LoLGameExe,Mode=OneWay}" Margin="5,0" VerticalAlignment="Center" Width="225" IsReadOnly="True" ToolTip="{Binding Text,RelativeSource={RelativeSource Self}}"/>
+                            <Button x:Name="SelectLoLGameExeButton" Style="{StaticResource ButtonStyle}" Content="{DynamicResource Select}"  Click="SelectLoLGameExeButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Style="{StaticResource PanelStyle}">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Text="{DynamicResource RecordSavePath}" VerticalAlignment="Center" Width="150"/>
+                            <TextBox x:Name="ReplaySavePathTextbox" Text="{Binding ReplaySavePath}" Margin="5,0" VerticalAlignment="Center" Width="225" IsReadOnly="True" ToolTip="{Binding Text,RelativeSource={RelativeSource Self}}"/>
+                            <Button  x:Name="SelectSavePathButton" Style="{StaticResource ButtonStyle}" Content="{DynamicResource SelectFolder}" Click="SelectSavePath" VerticalAlignment="Center"/>
+                            <Button  x:Name="OpenFolderPathButton" Style="{StaticResource ButtonStyle}" Content="{DynamicResource OpenFolder}" Click="OpenFolderPathButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Style="{StaticResource PanelStyle}">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Text="{DynamicResource MovieSavePath}" VerticalAlignment="Center" Width="150"/>
+                            <TextBox x:Name="MovieSavePathTextbox" Text="{Binding MovieSavePath}" Margin="5,0" VerticalAlignment="Center" Width="225" IsReadOnly="True" ToolTip="{Binding Text,RelativeSource={RelativeSource Self}}"/>
+                            <Button  x:Name="MovieSavePathButton" Style="{StaticResource ButtonStyle}" Content="{DynamicResource SelectFolder}" Click="SelectMovieSavePath" VerticalAlignment="Center"/>
+                            <Button  x:Name="MovieSavePathOpenButton" Style="{StaticResource ButtonStyle}" Content="{DynamicResource OpenFolder}" Click="MovieSavePathOpenButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Style="{StaticResource PanelStyle}">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Text="{DynamicResource RecordFileNameFormat}" VerticalAlignment="Center" Width="150" />
+                            <TextBox x:Name="FileNameFormatTextbox" Text="{Binding FileNameFormat}" Margin="5,0" VerticalAlignment="Center" Width="225" PreviewTextInput="FileNameFormatTextbox_PreviewTextInput"/>
+                            <Button x:Name="FileNameFormatChangeButton" Style="{StaticResource ButtonStyle}" Content="{DynamicResource FormatModifier}" Click="FileNameFormatChangeButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Style="{StaticResource PanelStyle}">
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Text="{DynamicResource SelectedRegion}" VerticalAlignment="Center" Width="150" />
+                            <ComboBox x:Name="RegionSelector" IsEditable="True" IsReadOnly="True" ItemsSource="{Binding Regions,Mode=OneTime}" Margin="5,0"  Width="225" SelectionChanged="RegionSelector_SelectionChanged"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <CheckBox Content="{DynamicResource AutoKillLoL}" Foreground="White" IsChecked="{Binding KillProcess}" Margin="0,20,0,0"/>
+                    <CheckBox Content="{DynamicResource AutoShrinkToTaskBar}" Foreground="White" IsChecked="{Binding AlwaysTaskbar}" Margin="0,5,0,0"/>
+                    <CheckBox Content="{DynamicResource CreateShortCutOnDesktop}" Foreground="White" IsChecked="{Binding CreateShortCutOnDesktop}" Margin="0,5,0,0"/>
+                    <CheckBox Content="{DynamicResource StartAtSystemStartup}" Foreground="White" IsChecked="{Binding StartWithSystem}" Margin="0,5,0,0"/>
+                    <!--<CheckBox Content="{DynamicResource CameraRotation}" Foreground="White" IsChecked="{Binding EnableCameraRotation}" Margin="0,5,0,0"/>-->
+                    <CheckBox Content="{DynamicResource HideBorder}" Foreground="White" IsChecked="{Binding HideBorder}" Margin="0,5,0,0"/>
+                    <CheckBox Content="{DynamicResource AdvanceReplay}" Foreground="White" IsChecked="{Binding AdvanceReplay}" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
+
+</UserControl>

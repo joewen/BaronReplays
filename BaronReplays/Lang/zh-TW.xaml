@@ -1,0 +1,898 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    >
+    <system:String x:Key="BR">
+        BaronReplays
+    </system:String>
+    <system:String x:Key="LangCode">
+        zh-TW
+    </system:String>
+    <system:String x:Key="MyRecords">
+        紀錄存放區
+    </system:String>
+    <system:String x:Key="Settings">
+        設定
+    </system:String>
+    <system:String x:Key="AutoStart">
+        開始遊戲後將會自動記錄
+    </system:String>
+    <system:String x:Key="LoLExePath">
+        LoL執行檔路徑
+    </system:String>
+    <system:String x:Key="Select">
+        更改執行檔
+    </system:String>
+    <system:String x:Key="RecordSavePath">
+        紀錄儲存位置
+    </system:String>
+    <system:String x:Key="SelectFolder">
+        選擇資料夾
+    </system:String>
+    <system:String x:Key="OpenFolder">
+        開啟資料夾
+    </system:String>
+    <system:String x:Key="RecordFileNameFormat">
+        記錄檔名格式
+    </system:String>
+    <system:String x:Key="RecordFileNameFormatReplace" xml:space="preserve">
+目前可以替換的格式有:&#13;(ID)招喚師名稱&#13;(Champion)使用的英雄&#13;(Time)日期時間&#13;(SPmode)是否為觀戰場次
+    </system:String>
+    <system:String x:Key="AutoKillLoL">
+        當觀戰時取得最小所需資料後，自動關閉LoL主程式
+    </system:String>
+    <system:String x:Key="AutoShrinkToTaskBar">
+        關閉時永遠縮小到工作列
+    </system:String>
+    <system:String x:Key="StartAtSystemStartup">
+        開機時啟動BaronReplays
+    </system:String>
+    <system:String x:Key="WatchReplay">
+        觀看對戰
+    </system:String>
+    <system:String x:Key="ShrinkToTaskBarQuestion">
+        是否縮小到工作列?
+    </system:String>
+    <system:String x:Key="RemainGame">
+        還有 {0} 個對戰正在紀錄。如果你按下確定，所有正在紀錄的對戰將無法完成。
+    </system:String>
+    <system:String x:Key="Sure">
+        確定嗎?
+    </system:String>
+    <system:String x:Key="HaveNewVersion">
+        有新版的BaronReplays可下載，按此立即更新。
+    </system:String>
+    <system:String x:Key="SpecMode">
+        觀戰模式
+    </system:String>
+    <system:String x:Key="RemainGameStatus">
+        正在記錄 {0} 場對戰
+    </system:String>
+    <system:String x:Key="Exit">
+        關閉 BaronReplays
+    </system:String>
+    <system:String x:Key="BrokenFile">
+        此檔案已毀損!
+    </system:String>
+    <system:String x:Key="CannotPlay">
+        無法撥放
+    </system:String>
+    <system:String x:Key="AlreadyPlaying">
+        已經在播放中了。
+    </system:String>
+    <system:String x:Key="DirectoryNotExist">
+        資料夾不存在，是否要建立一個新的?
+    </system:String>
+    <system:String x:Key="CreateShortCutOnDesktop">
+        在桌面上建立捷徑
+    </system:String>
+    <system:String x:Key="BRAlreadyRunning">
+        BaronReplays已經在執行中了
+    </system:String>
+    <system:String x:Key="AskSendReport">
+        本系統遇到問題並中止運作，請問是否要重新啟動?
+    </system:String>
+    <system:String x:Key="SendSuccess">
+        傳送成功!
+    </system:String>
+    <system:String x:Key="SendFailed">
+        傳送失敗!
+    </system:String>
+    <system:String x:Key="HomePage">
+        首頁
+    </system:String>
+    <system:String x:Key="DeleteRecord">
+        刪除紀錄
+    </system:String>
+    <system:String x:Key="RenameReplay">
+        更改名稱
+    </system:String>
+    <system:String x:Key="GameId">
+        遊戲編號:
+    </system:String>
+    <system:String x:Key="GameMode">
+        遊戲模式:
+    </system:String>
+    <system:String x:Key="GameType">
+        遊戲類型:
+    </system:String>
+    <system:String x:Key="Ranked">
+        積分對戰:
+    </system:String>
+    <system:String x:Key="GameLength">
+        遊戲長度:
+    </system:String>
+    <system:String x:Key="CLASSIC">
+        一般對戰
+    </system:String>
+    <system:String x:Key="ARAM">
+        ARAM
+    </system:String>
+    <system:String x:Key="ONEFORALL">
+        無限死鬥
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD">
+        決勝慶典
+    </system:String>
+    <system:String x:Key="ODIN">
+        據點攻略戰
+    </system:String>
+    <system:String x:Key="HEXAKILL">
+        六連殺
+    </system:String>
+    <system:String x:Key="CUSTOM_GAME">
+        自訂對戰
+    </system:String>
+    <system:String x:Key="MATCHED_GAME">
+        配對系統
+    </system:String>
+    <system:String x:Key="GameLengthFormat">
+        {0} : {1:00}
+    </system:String>
+    <system:String x:Key="Downloading">
+        下載中...
+    </system:String>
+    <system:String x:Key="ErrorDetectGameId">
+        無法取得遊戲編號
+    </system:String>
+    <system:String x:Key="ErrorUnsuppotedRegion">
+         請至設定中選擇您所在的區域，若您正在與電腦對戰請忽略此訊息
+    </system:String>
+    <system:String x:Key="ErrorDetectObKey">
+        無法取得Observer Encryption Key
+    </system:String>
+    <system:String x:Key="ErrorGettingContent">
+        無法取得部分遊戲內容，可能是太晚加入觀戰
+    </system:String>
+    <system:String x:Key="ErrorGettingSpecMode">
+        無法取得觀戰模式資訊，此對戰可能已結束
+    </system:String>
+    <system:String x:Key="ErrorDuplicateGame">
+        重複錄製的對戰
+    </system:String>
+    <system:String x:Key="RecordFailed">
+        錄製失敗，原因是: {0}
+    </system:String>
+    <system:String x:Key="Okay">
+        確定
+    </system:String>
+    <system:String x:Key="SelectLoLExe">
+        請選擇LoL安裝資料夾中的(League of Legends.exe)
+    </system:String>
+    <system:String x:Key="SelectedRegion">
+        區域
+    </system:String>
+    <system:String x:Key="AboutVersion">
+        版本: {0}
+    </system:String>
+    <system:String x:Key="AskUpdate">
+        有新的版本可以更新，更新時會將BaronReplays重新啟動，所有正在錄製中的對戰將不會保留，是否繼續進行更新?
+    </system:String>
+    <system:String x:Key="NewestVersion">
+        已經是最新版本。
+    </system:String>
+    <system:String x:Key="File">
+        檔案
+    </system:String>
+    <system:String x:Key="Open">
+        開啟紀錄檔
+    </system:String>
+    <system:String x:Key="Function">
+        功能
+    </system:String>
+    <system:String x:Key="CheckForUpdate">
+        檢查更新
+    </system:String>
+    <system:String x:Key="Help">
+        說明
+    </system:String>
+    <system:String x:Key="OpenWebsite">
+        開啟官方網站
+    </system:String>
+    <system:String x:Key="BackToNews">
+        回到新聞頁面
+    </system:String>
+    <system:String x:Key="AboutBR">
+        關於 BaronReplays
+    </system:String>
+    <system:String x:Key="FeaturedGames">
+        精選對戰
+    </system:String>
+    <system:String x:Key="RecordThisGame">
+        記錄此對戰
+    </system:String>
+    <system:String x:Key="PlayThisGame">
+        播放此對戰
+    </system:String>
+    <system:String x:Key="WatchNow">
+        是否要在資料準備完成後立即觀看?
+    </system:String>
+    <system:String x:Key="SureDelete">
+        確定要刪除 {0} 嗎?
+    </system:String>
+    <system:String x:Key="NetworkError">
+        無法連線到伺服器，請確定有連接上網際網路
+    </system:String>
+    <system:String x:Key="CannotGetFeaturedGames">
+        無法取得精選對戰資料
+    </system:String>
+    <system:String x:Key="RecordSucceed">
+        一個對戰已錄製完成
+    </system:String>
+    <system:String x:Key="PleasePlayFirst">
+        請先進行一場對戰以取得路徑
+    </system:String>
+    <system:String x:Key="GameDetail">
+        對戰資料
+    </system:String>
+    <system:String x:Key="QFsearch">
+        在QuickFind上查詢 {0}
+    </system:String>
+    <system:String x:Key="TW">
+        台灣
+    </system:String>
+    <system:String x:Key="NA1">
+        北美
+    </system:String>
+    <system:String x:Key="EUW1">
+        西歐
+    </system:String>
+    <system:String x:Key="EUN1">
+        北歐
+    </system:String>
+    <system:String x:Key="EU">
+        歐洲
+    </system:String>
+    <system:String x:Key="KR">
+        韓國
+    </system:String>
+    <system:String x:Key="BR1">
+        巴西
+    </system:String>
+    <system:String x:Key="TR1">
+        土耳其
+    </system:String>
+    <system:String x:Key="SG">
+        新加坡
+    </system:String>
+    <system:String x:Key="RU">
+        俄羅斯
+    </system:String>
+    <system:String x:Key="LA1">
+        北拉丁美洲
+    </system:String>
+    <system:String x:Key="LA2">
+        南拉丁美洲
+    </system:String>
+    <system:String x:Key="PBE1">
+        Public Beta
+    </system:String>
+    <system:String x:Key="TRRU">
+        土耳其、俄羅斯
+    </system:String>
+    <system:String x:Key="BRLA">
+        巴西、中南美洲
+    </system:String>
+    <system:String x:Key="OC1">
+        大洋洲
+    </system:String>
+    <system:String x:Key="VN">
+        越南
+    </system:String>
+    <system:String x:Key="PH">
+        菲律賓
+    </system:String>
+    <system:String x:Key="ID1">
+        印度尼西亞
+    </system:String>
+    <system:String x:Key="TH">
+        泰國
+    </system:String>
+    <system:String x:Key="JP1">
+        日本
+    </system:String>
+    <system:String x:Key="Language">
+        語言
+    </system:String>
+    <system:String x:Key="AnalyzeCommand">
+        分析命令列
+    </system:String>
+    <system:String x:Key="InputCommand">
+        輸入命令
+    </system:String>
+    <system:String x:Key="UselessCommand">
+        命令列中找不到對戰資訊
+    </system:String>
+    <system:String x:Key="OpenCommandFile">
+        開啟命令檔
+    </system:String>
+    <system:String x:Key="SelectFile">
+        請選擇一個檔案
+    </system:String>
+    <system:String x:Key="Menu_File_OpenCommandFile_Click_Tooltip">
+        開啟一個命令檔，可以用於觀看op.gg或是其他網站下載來的批次檔
+    </system:String>
+    <system:String x:Key="Menu_File_AnalyzeCommand_Click_Tooltip">
+        輸入一個命令列，可以用於觀看kassad.in或是lolnexus.com等其他網站提供的命令列
+    </system:String>
+    <system:String x:Key="PickReplaySaveFolder">
+        選擇要放置記錄檔的資料夾
+    </system:String>
+    <system:String x:Key="PickLoLExe">
+        請選擇在LoL安裝資料夾內的(League of Legends.exe)
+    </system:String>
+
+    <system:String x:Key="AboutContent"  xml:space="preserve">
+BaronReplays是一個用來紀錄及播放英雄聯盟(League of Legends)遊戲過程的軟體，本軟體可以自由使用、複製，但禁止使用逆向工程等任何可以取得軟體內部運作情況之使用。
+        
+軟體中所有與英雄聯盟(League of Legends)遊戲有關的圖片及文字所有權都屬於Riot Games。
+
+聯絡方式: ahri@ahri.tw
+
+注意事項: 
+        1.本軟體不保證每次遊戲改版後可以完整呈現改版前的遊戲紀錄。
+        2.精選對戰可能會因為區域改版進度不一而無法撥放
+        
+捐贈清單(依日期排序，由新到舊):
+        Craig Jones&#x09;&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Johnston​Steve&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Ibarra​Christian&#x09;&#x09;&#x09;$14.04&#x09;USD
+        Zwick ​Andreas&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Felix Garben&#x09;&#x09;&#x09;&#x09;$23.60&#x09;USD
+        vincent Jesus&#x09;&#x09;&#x09;$0.45&#x09;USD
+        ming ho chang&#x09;&#x09;&#x09;$2.58&#x09;USD 
+        Yichao Zhu&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD 
+        matteo burbui&#x09;&#x09;&#x09;$1.61&#x09;USD
+        Raphaël Montmory&#x09;&#x09;&#x09;$0.66&#x09;USD
+        Luckyyen&#x09;&#x09;&#x09;&#x09;$147&#x09;TWD
+        Emmanuel Tiburciod&#x09;&#x09;&#x09;$1.61&#x09;USD
+        Kuo David&#x09;&#x09;&#x09;&#x09;$3.54&#x09;USD
+        Chung Ming Wai Cindy&#x09;&#x09;$11.17&#x09;USD
+        vincent Jesus&#x09;&#x09;&#x09;$0.68&#x09;USD
+        許家誠&#x09;&#x09;&#x09;&#x09;$47.75&#x09;USD
+        EL MEHDI TOUIMI BENJELLOUN&#x09;$0&#x09;USD
+        Maciej Sularz&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Cameron Irby&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Wei-Chieh Kao&#x09;&#x09;&#x09;$2.57&#x09;USD
+        tyler hess&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD
+        TheCarlEffect&#x09;&#x09;&#x09;$10.32&#x09;USD
+        jernej pirs&#x09;&#x09;&#x09;&#x09;$2.57&#x09;USD
+        Firat Akyol&#x09;&#x09;&#x09;&#x09;$9.26&#x09;USD
+        Thyago Martins Correa&#x09;&#x09;$4.48&#x09;USD
+        Bülent Gerçek&#x09;&#x09;&#x09;$4.48&#x09;USD
+        Daniel Baughman&#x09;&#x09;&#x09;$100&#x09;USD
+        Mikko Kujala&#x09;&#x09;&#x09;$6.39&#x09;USD
+        Paolo Mattera&#x09;&#x09;&#x09;$181&#x09;TWD
+        Jean Marc Sautron&#x09;&#x09;&#x09;$353&#x09;TWD
+        
+翻譯提供:
+        العربية&#x09;&#x09;by    Abdullah Salma
+        Deutsch&#x09;&#x09;by    Cranken Haus
+        español&#x09;&#x09;by    Gustavo Garcia
+        Español (Argentina)&#x09;by    StyGan gg
+        suomi&#x09;&#x09;by    Reino "SupCom" Kinner
+        français&#x09;&#x09;by    Loïc F. (Cénirion)
+        hrvatski&#x09;&#x09;by    Patrick Margan 
+        Bahasa Indonesia&#x09;by    carl_jotosaon
+        italiano&#x09;&#x09;by    Diego "Maverick" Tarozzi
+        Nederlands&#x09;&#x09;by    Guus Wikkerink (Lick A Brick)
+        polski&#x09;&#x09;by    Pasterz
+        Português&#x09;&#x09;by    Daniel rodrigues 
+        русский&#x09;&#x09;by    Ivan Serpov (Dart Vanya)
+        română&#x09;&#x09;by    Stemate Florentin (undercover42)
+        svenska&#x09;&#x09;by    Amir Daher (Frictional)
+        Türkçe&#x09;&#x09;by    Bugra katrancı (SupremeMaster)
+        TViệt Nam&#x09;&#x09;by    Ngọc Minh(NIG: KingSwan)
+        
+        
+第三方API:
+        
+        CefSharp
+        https://github.com/cefsharp/CefSharp
+        
+        FluorineFx
+        http://www.fluorinefx.com/
+              
+        Json.NET
+        http://json.codeplex.com/
+        
+        SQLite
+        http://www.sqlite.org/
+    </system:String>
+    <system:String x:Key="SummonerName">
+        召喚師名稱
+    </system:String>
+    <system:String x:Key="Champion">
+        英雄
+    </system:String>
+    <system:String x:Key="Year">
+        年
+    </system:String>
+    <system:String x:Key="Month">
+        月
+    </system:String>
+    <system:String x:Key="Day">
+        日
+    </system:String>
+    <system:String x:Key="Hour">
+        時
+    </system:String>
+    <system:String x:Key="Minute">
+        分
+    </system:String>
+    <system:String x:Key="Second">
+        秒
+    </system:String>
+    <system:String x:Key="Kill">
+        擊殺
+    </system:String>
+    <system:String x:Key="Death">
+        死亡
+    </system:String>
+    <system:String x:Key="Assist">
+        助攻
+    </system:String>
+    <system:String x:Key="KDA">
+        KDA
+    </system:String>
+    <system:String x:Key="WinLose">
+        勝敗
+    </system:String>
+    <system:String x:Key="Map">
+        遊戲地圖
+    </system:String>
+    <system:String x:Key="Win">
+        勝利
+    </system:String>
+    <system:String x:Key="Lose">
+        失敗
+    </system:String>
+    <system:String x:Key="FormatModifier">
+        格式修改器
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe">
+        更改非觀戰預設檔案名稱
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe1">
+        1.檔案名稱中可以有的選項
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe2">
+        2.請從上面拖曳想要用的選項到這來
+    </system:String>
+    <system:String x:Key="FormatModifierDescribe3">
+        3.非觀戰場次檔案名稱命名如下
+    </system:String>
+    <system:String x:Key="Save">
+        儲存
+    </system:String>
+    <system:String x:Key="Cancel">
+        取消
+    </system:String>
+    <system:String x:Key="NoResult">
+        沒有結果
+    </system:String>
+    <system:String x:Key="BlueTeamWon">
+        藍隊獲勝
+    </system:String>
+    <system:String x:Key="PurpleTeamWon">
+        紅隊獲勝
+    </system:String>
+    <system:String x:Key="GameResult">
+        對戰結果:
+    </system:String>
+    <system:String x:Key="Spectate">
+        觀戰
+    </system:String>
+    <system:String x:Key="AdvanceReplay">
+        從頭開始播放記錄
+    </system:String>
+    <system:String x:Key="CHAMPIONS_KILLED">
+        擊殺
+    </system:String>
+    <system:String x:Key="NUM_DEATHS">
+        死亡
+    </system:String>
+    <system:String x:Key="ASSISTS">
+        助攻
+    </system:String>
+    <system:String x:Key="LARGEST_KILLING_SPREE">
+        最高連殺
+    </system:String>
+    <system:String x:Key="LARGEST_MULTI_KILL">
+        最高同時擊殺數
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_DEALT_TO_CHAMPIONS">
+        對英雄造成的攻擊
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS">
+        對英雄造成的物理攻擊
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_DEALT_TO_CHAMPIONS">
+        對英雄造成的魔法攻擊
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_DEALT_TO_CHAMPIONS">
+        對英雄造成的真實傷害
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_DEALT">
+        輸出傷害
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_DEALT_PLAYER">
+        輸出物理傷害
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_DEALT_PLAYER">
+        輸出魔法傷害
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_DEALT_PLAYER">
+        輸出真實傷害
+    </system:String>
+    <system:String x:Key="LARGEST_CRITICAL_STRIKE">
+        最高爆擊傷害
+    </system:String>
+    <system:String x:Key="TOTAL_HEAL">
+        回復生命
+    </system:String>
+    <system:String x:Key="TOTAL_DAMAGE_TAKEN">
+        承受傷害
+    </system:String>
+    <system:String x:Key="PHYSICAL_DAMAGE_TAKEN">
+        承受物理傷害
+    </system:String>
+    <system:String x:Key="MAGIC_DAMAGE_TAKEN">
+        承受魔法傷害
+    </system:String>
+    <system:String x:Key="TRUE_DAMAGE_TAKEN">
+        承受真實傷害
+    </system:String>
+    <system:String x:Key="LEVEL">
+        等級
+    </system:String>
+    <system:String x:Key="GOLD_EARNED">
+        獲得金錢
+    </system:String>
+    <system:String x:Key="TURRETS_KILLED">
+        摧毀防禦塔
+    </system:String>
+    <system:String x:Key="BARRACKS_KILLED">
+        摧毀水晶兵營
+    </system:String>
+    <system:String x:Key="MINIONS_KILLED">
+        擊殺士兵
+    </system:String>
+    <system:String x:Key="NEUTRAL_MINIONS_KILLED">
+        擊殺中立生物
+    </system:String>
+    <system:String x:Key="TOTAL_TIME_SPENT_DEAD">
+        死亡時間
+    </system:String>
+    <system:String x:Key="WARD_PLACED">
+        放置守衛數量
+    </system:String>
+    <system:String x:Key="WARD_KILLED">
+        清除守衛數量
+    </system:String>
+    <system:String x:Key="TOTAL_TIME_CROWD_CONTROL_DEALT">
+        CC時間
+    </system:String>
+    <system:String x:Key="FileInfo">
+        檔案資訊
+    </system:String>
+    <system:String x:Key="ScoreBoard">
+        記分板
+    </system:String>
+    <system:String x:Key="Combat">
+        戰鬥
+    </system:String>
+    <system:String x:Key="DamageDone">
+        輸出傷害
+    </system:String>
+    <system:String x:Key="DamageTakenAndHealed">
+        承受傷害 及 治癒傷害
+    </system:String>
+    <system:String x:Key="Misc">
+        其他
+    </system:String>
+    <system:String x:Key="GameNo">
+        遊戲編號:
+    </system:String>
+    <system:String x:Key="GameRegion">
+        遊戲區域:
+    </system:String>
+    <system:String x:Key="GameVersion">
+        遊戲版本:
+    </system:String>
+    <system:String x:Key="FilePath">
+        檔案位置:
+    </system:String>
+    <system:String x:Key="GameStartTime">
+        遊戲開始時間:
+    </system:String>
+    <system:String x:Key="GameEndTime">
+        遊戲結束時間:
+    </system:String>
+    <system:String x:Key="Overview">
+        回到簡易資訊
+    </system:String>
+    <system:String x:Key="Grid">
+        詳細資訊
+    </system:String>
+    <system:String x:Key="FacebookFansPage">
+        Facebook 粉絲專頁
+    </system:String>
+    <system:String x:Key="RecordingGame">
+        錄製中的對戰
+    </system:String>
+    <system:String x:Key="NoData">
+        此記錄無詳細資料
+    </system:String>
+    <system:String x:Key="UpdateNow">
+        立即更新
+    </system:String>
+    <system:String x:Key="NotNow">
+        下次提醒
+    </system:String>
+    <system:String x:Key="DoNotRemind">
+        永不提醒
+    </system:String>
+    <system:String x:Key="UpdateNotify">
+        更新通知
+    </system:String>
+    <system:String x:Key="Banned">
+        禁用
+    </system:String>
+    <system:String x:Key="ErrorGetLogPath">
+        無法取得Log檔案路徑
+    </system:String>
+    <system:String x:Key="MovieEditor">
+        編輯影片
+    </system:String>
+    <system:String x:Key="DragToCut">
+        拖曳拉桿選擇要保留的片段
+    </system:String>
+    <system:String x:Key="Finish">
+        完成
+    </system:String>
+    <system:String x:Key="MovieSetting">
+        影片設定
+    </system:String>
+    <system:String x:Key="SelectQuality">
+        請選擇想要的畫質
+    </system:String>
+    <system:String x:Key="Lowest">
+        最低
+    </system:String>
+    <system:String x:Key="Low">
+        低
+    </system:String>
+    <system:String x:Key="Medium">
+        中
+    </system:String>
+    <system:String x:Key="High">
+        高
+    </system:String>
+    <system:String x:Key="Space30">
+        每分鐘約 30 MB
+    </system:String>
+    <system:String x:Key="Space60">
+        每分鐘約 60 MB
+    </system:String>
+    <system:String x:Key="Space90">
+        每分鐘約 90 MB
+    </system:String>
+    <system:String x:Key="Space120">
+        每分鐘約 120 MB
+    </system:String>
+    <system:String x:Key="NameMovie">
+        命名影片
+    </system:String>
+    <system:String x:Key="MovieRecordingMode">
+        錄影模式
+    </system:String>
+    <system:String x:Key="MovieRecordingTooltip">
+        錄影模式會記錄下一次LoL開啟後的遊戲過程
+    </system:String>
+    <system:String x:Key="MovieRecordingSuccessed">
+        影片錄製完成
+    </system:String>
+    <system:String x:Key="MovieRecordingFailed">
+        影片錄製失敗
+    </system:String>
+    <system:String x:Key="MovieRecordingPlayNow" xml:space="preserve">
+        影片錄製完成，是否立即撥放?
+        
+        影片位置: {0}
+    </system:String>
+    <system:String x:Key="MovieRecordingBackground">
+        請稍等，影片將會在背景處理，完成後會再顯示通知
+    </system:String>
+    <system:String x:Key="MovieRecording">
+        影片製作中
+    </system:String>
+    <system:String x:Key="ExportMovie">
+        匯出影片
+    </system:String>
+    <system:String x:Key="Search">
+        搜尋
+    </system:String>
+    <system:String x:Key="MovieSavePath">
+        影片儲存位置
+    </system:String>
+    <system:String x:Key="SelectRegionTitle">
+        選擇您的 LoL 區域
+    </system:String>
+    <system:String x:Key="Others">
+        其他...
+    </system:String>
+    <system:String x:Key="GameInfo">
+        遊戲資訊
+    </system:String>
+    <system:String x:Key="UrlMessage">
+        BaronReplays 觀戰網址
+    </system:String>
+    <system:String x:Key="CommandLineMessage">
+        此對戰的命令列
+    </system:String>
+    <system:String x:Key="CopyUrl">
+        複製網址
+    </system:String>
+    <system:String x:Key="CopyCommandLine">
+        複製命令列
+    </system:String>
+    <system:String x:Key="RecordingIssueExist">
+        目前 {0} 錄製有些問題，造成不便請見諒。
+    </system:String>
+    <system:String x:Key="Recommended">
+        推薦
+    </system:String>
+    <system:String x:Key="Favorite">
+        我的最愛
+    </system:String>
+    <system:String x:Key="OldVersionReplay">
+        您要開啟的紀錄檔與現行版本不相同，是否要連結到舊版本主程式的下載頁面?
+    </system:String>
+    <system:String x:Key="CameraRotation">
+        播放對戰時啟用自由視角變換
+    </system:String>
+    <system:String x:Key="CUSTOM">
+        自訂對戰
+    </system:String>
+    <system:String x:Key="NORMAL_5x5_BLIND">
+        一般對戰 5v5
+    </system:String>
+    <system:String x:Key="BOT_5x5">
+        電腦
+    </system:String>
+    <system:String x:Key="BOT_5x5_INTRO">
+        入門電腦
+    </system:String>
+    <system:String x:Key="BOT_5x5_BEGINNER">
+        初階電腦
+    </system:String>
+    <system:String x:Key="BOT_5x5_INTERMEDIATE">
+        中階電腦
+    </system:String>
+    <system:String x:Key="NORMAL_3x3">
+        一般對戰 3v3
+    </system:String>
+    <system:String x:Key="NORMAL_5x5_DRAFT">
+        一般對戰 競技模式 5v5
+    </system:String>
+    <system:String x:Key="ODIN_5x5_BLIND">
+        據點攻略戰 5v5
+    </system:String>
+    <system:String x:Key="ODIN_5x5_DRAFT">
+        據點攻略戰 競技模式 5v5
+    </system:String>
+    <system:String x:Key="BOT_ODIN_5x5">
+        據點攻略戰 玩家 VS 電腦
+    </system:String>
+    <system:String x:Key="RANKED_SOLO_5x5">
+        單排/雙排積分
+    </system:String>
+    <system:String x:Key="RANKED_PREMADE_3x3">
+        積分 3v3
+    </system:String>
+    <system:String x:Key="RANKED_PREMADE_5x5">
+        積分 5v5
+    </system:String>
+    <system:String x:Key="RANKED_TEAM_3x3">
+        戰隊積分 3v3
+    </system:String>
+    <system:String x:Key="RANKED_TEAM_5x5">
+        戰隊積分 5v5
+    </system:String>
+    <system:String x:Key="BOT_TT_3x3">
+        扭曲叢林 玩家 VS 電腦
+    </system:String>
+    <system:String x:Key="GROUP_FINDER_5x5">
+        進階組隊系統
+    </system:String>
+    <system:String x:Key="ARAM_5x5">
+        ARAM
+    </system:String>
+    <system:String x:Key="ONEFORALL_5x5">
+        無限死鬥
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD_1x1">
+        冬至慶典 1v1
+    </system:String>
+    <system:String x:Key="FIRSTBLOOD_2x2">
+        冬至慶典 2v2
+    </system:String>
+    <system:String x:Key="SR_6x6">
+        六連殺
+    </system:String>
+    <system:String x:Key="URF_5x5">
+        阿福快打
+    </system:String>
+    <system:String x:Key="BOT_URF_5x5">
+        阿福快打 玩家 VS 電腦
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK1">
+        夢魘挑戰
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK2">
+        夢魘挑戰
+    </system:String>
+    <system:String x:Key="NIGHTMARE_BOT_5x5_RANK5">
+        夢魘挑戰
+    </system:String>
+    <system:String x:Key="ASCENSION_5x5">
+        Ascension
+    </system:String>
+    <system:String x:Key="KING_PORO_5x5">
+        普羅王傳說
+    </system:String>
+    <system:String x:Key="KINGPORO">
+        普羅王傳說
+    </system:String>
+    <system:String x:Key="COUNTER_PICK">
+        逆轉對決
+    </system:String>
+    <system:String x:Key="BILGEWATER_5x5">
+        黑街打手
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_DRAFT_UNRANKED_5x5">
+        一般對戰 競技模式 5v5
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_DRAFT_RANKED_5x5">
+        積分對戰
+    </system:String>
+    <system:String x:Key="TEAM_BUILDER_RANKED_SOLO">
+        單/雙排積分
+    </system:String>
+    <system:String x:Key="RANKED_FLEX_SR">
+        彈性積分
+    </system:String>
+    <system:String x:Key="HideBorder">
+        隱藏側邊裝飾
+    </system:String>
+    <system:String x:Key="VideoRecordingExitCheck">
+        現在取消錄製的話，所有的已錄製的片段將不會被保留，確定要取消嗎?
+    </system:String>
+    <system:String x:Key="ReportBug">
+        回報問題
+    </system:String>
+    <system:String x:Key="ReportBugDescription">
+        請寫下您的問題或是意見，我們會在收到之後嘗試修正及改善。我們會蒐集此電腦的系統資訊以及本次 BaronReplays 運作的記錄檔，以便分析。
+    </system:String>
+</ResourceDictionary>

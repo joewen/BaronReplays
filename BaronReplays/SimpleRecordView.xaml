@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="BaronReplays.SimpleRecordView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BaronReplays"
+             xmlns:staticdata="clr-namespace:BaronReplays.LoLStaticData"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" Margin="0,0,5,5" d:DesignWidth="300" Height="90" Cursor="Hand" Foreground="White" Padding="0">
+
+    <UserControl.Resources>
+
+        <local:GetListItemBackground x:Key="GetListItemBackground" />
+        <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        <local:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <local:WinTeamColorConverter x:Key="WinTeamColorConverter" />
+        <local:LeftColorConverter x:Key="LeftColorConverter"/>
+        <Style x:Key="MouseEffectStyle" TargetType="Grid">
+            <!--<Setter Property="Background" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter  Property="Background" Value="#FFD3E6F9" />
+                </Trigger>
+            </Style.Triggers>-->
+        </Style>
+        <Style x:Key="FunctionButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource TriButtonStyle}">
+            <Setter Property="FontSize" Value="14"/>
+            <!--<Setter Property="Width" Value="100"/>-->
+            <Setter Property="MinWidth" Value="80"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="3,3"/>
+        </Style>
+        <local:MsecToStr x:Key="MsecToStr"/>
+        <local:SimpleVersionConverter x:Key="SimpleVersionConverter"/>
+    </UserControl.Resources>
+    <!--<UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem x:Name="Menu_FileMeta" Header="{DynamicResource FileInfo}" Click="Menu_FileMeta_Click"/>
+        </ContextMenu>
+    </UserControl.ContextMenu>-->
+    <Border Style="{StaticResource RoundedClipBorder}" CornerRadius="5" BorderThickness="0">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.Background>
+                    <MultiBinding Converter="{StaticResource LeftColorConverter}">
+                        <Binding Path="DisplayPlayer" />
+                        <Binding Path="GameInfo" />
+                    </MultiBinding>
+                </Grid.Background>
+            </Grid>
+
+
+            <Grid Style="{StaticResource MouseEffectStyle}" Grid.Column="1">
+                <!--<Grid.Background>
+            <MultiBinding Converter="{StaticResource GetListItemBackground}">
+                <Binding RelativeSource="{RelativeSource AncestorType={x:Type ListBoxItem}}" />
+                <Binding RelativeSource="{RelativeSource AncestorType={x:Type ListBox}}" />
+            </MultiBinding>
+        </Grid.Background>-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--<CheckBox Grid.Row="0"  Foreground="#FF007AFF" HorizontalAlignment="Right" Margin="4" IsChecked="{Binding Favorite,Mode=TwoWay}"/>-->
+                <Grid Grid.Row="0" Background="#FF333333">
+                    <TextBlock x:Name="FileNameTextBox" Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding FileNameShort}" Foreground="White" FontSize="14"/>
+                    <StackPanel Margin="5,0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding LoLVersion, Converter={StaticResource SimpleVersionConverter}}" Foreground="White" Margin="0,0,80,0" FontSize="14" Visibility="{Binding IsMouseOver,Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type local:SimpleRecordView}}}"/>
+                        <TextBlock Text="{Binding GameInfo.Length, Converter={StaticResource MsecToStr}}" Margin="20,0" FontSize="14"/>
+                        <local:TriStateImageButton ImagePath="UI/SimpleRecord/History.png" Height="18" Width="18"  Margin="2,0" Clicked="HistoryIcon_Click" Visibility="{Binding RecoringRecorder,Converter={StaticResource NullToVisibilityConverter}}"/>
+                        <local:TriStateImageButton x:Name="FavoriteIcon" ImagePath="UI/SimpleRecord/Heart.png" Height="18" Width="18"  Margin="2,0" LockDown="{Binding Favorite,Mode=OneWay}" Clicked="FavoriteIcon_Clicked"/>
+                        <local:TriStateImageButton ImagePath="UI/SimpleRecord/Rename.png" Height="18" Width="18" Margin="2,0" Clicked="RenameButton_Click" Visibility="{Binding RecoringRecorder,Converter={StaticResource NullToVisibilityConverter}}"/>
+                        <local:TriStateImageButton ImagePath="UI/SimpleRecord/Delete.png" Height="18" Width="18"  Margin="2,0" Clicked="DeleteButton_Click"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1"  Background="#FF171717">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <local:ThirdPersonView Visibility="{Binding DisplayPlayer ,Converter={StaticResource NullToVisibilityConverter}}"/>
+                    <local:FirstPersonView Visibility="{Binding DisplayPlayer ,Converter={StaticResource NotNullToVisibilityConverter}}"/>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="2,0">
+                        <Border Width="40" Height="40" BorderThickness="1" BorderBrush="White" Margin="2,0" PreviewMouseLeftButtonUp="ExportButton_Click">
+                            <local:TriStateImageButton ImagePath="UI/SimpleRecord/Export.png"/>
+                        </Border>
+                        <Border Width="40" Height="40" BorderThickness="1" BorderBrush="White" Margin="2,0" PreviewMouseLeftButtonUp="WatchButton_Click">
+                            <local:TriStateImageButton ImagePath="UI/SimpleRecord/Play.png"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <!--<StackPanel Grid.Row="2" Margin="0,3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Orientation="Horizontal" Visibility="{Binding IsMouseOver,Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type local:SimpleRecordView}}}">
+
+                <TextBlock Text="{DynamicResource GameVersion}" />
+                <TextBlock Text="{Binding LoLVersion}" />
+            </StackPanel>-->
+
+
+            </Grid>
+        </Grid>
+
+    </Border>
+</UserControl>

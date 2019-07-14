@@ -1,0 +1,14 @@
+﻿<Window x:Class="BaronReplays.BugReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaronReplays"
+        mc:Ignorable="d"
+        Title="{DynamicResource ReportBug}" Style="{StaticResource PopupWindowStyle}" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Closed="Window_Closed">
+    <StackPanel Orientation="Vertical" Margin="15,10" Width="500" >
+        <TextBlock Text="{DynamicResource ReportBugDescription}" TextWrapping="WrapWithOverflow" Margin="5,5"/>
+        <TextBox Text="{Binding Message}" Margin="5,10,5,10" TextWrapping="Wrap" MaxLength="10240" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Height="300"/>
+        <Button x:Name="OKButton" Style="{StaticResource PopupWindowTriButtonStyle}" Width="75" Height="25" HorizontalAlignment="Center" Content="{DynamicResource Okay}" Margin="5,0,5,5" Click="OKButton_Click" />
+    </StackPanel>
+</Window>

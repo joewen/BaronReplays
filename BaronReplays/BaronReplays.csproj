@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F272ABB-0D31-4663-B22A-080DF47DAE95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaronReplays</RootNamespace>
+    <AssemblyName>BaronReplays</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>發行\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>$(SolutionDir)_Output\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>$(SolutionDir)_Output\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Debug\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluorineFx, Version=1.0.0.15, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Output\Release\FluorineFx.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeyApp, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HockeySDK.WPF.2.2.3\lib\net45\HockeyApp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HockeyAppPCL, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HockeySDK.Core.2.2.3\lib\portable-net45+win8+wp8+wpa81+win81\HockeyAppPCL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.99.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.99.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.99.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AboutBR.xaml.cs">
+      <DependentUpon>AboutBR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BRapi\Model\GameMetaData.cs" />
+    <Compile Include="BRapi\Model\Player.cs" />
+    <Compile Include="BRapi\Service\ReportService.cs" />
+    <Compile Include="BRapi\Service\GarenaService.cs" />
+    <Compile Include="BRapi\Service\LaunchService.cs" />
+    <Compile Include="BRapi\Service\PlatformService.cs" />
+    <Compile Include="BRapi\Service\RecordingService.cs" />
+    <Compile Include="BRButton.cs" />
+    <Compile Include="BugReport.xaml.cs">
+      <DependentUpon>BugReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DatabaseManager.cs" />
+    <Compile Include="Database\GameDatabase.cs" />
+    <Compile Include="Database\GameDBDTO.cs" />
+    <Compile Include="Database\PlayerDBDTO.cs" />
+    <Compile Include="Database\DBDTO.cs" />
+    <Compile Include="Database\SummonerDBDTO.cs" />
+    <Compile Include="FirstPersonView.xaml.cs">
+      <DependentUpon>FirstPersonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameInfoFinder.cs" />
+    <Compile Include="GameInfoView.xaml.cs">
+      <DependentUpon>GameInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="LoLClientData.cs" />
+    <Compile Include="LoLExeData.cs" />
+    <Compile Include="LoLStaticData\Base.cs" />
+    <Compile Include="LoLStaticData\Item.cs" />
+    <Compile Include="BRapi\Service\GameService.cs" />
+    <Compile Include="ProcessInfo.cs" />
+    <Compile Include="RiotAPI\BannedChampion.cs" />
+    <Compile Include="RiotAPI\Constants.cs" />
+    <Compile Include="RiotAPI\CurrentGameInfo.cs" />
+    <Compile Include="RiotAPI\GroupDto.cs" />
+    <Compile Include="RiotAPI\ItemDto.cs" />
+    <Compile Include="LoLStaticData\SummonerSpell.cs" />
+    <Compile Include="LoLStaticData\Champion.cs" />
+    <Compile Include="LanguageSettings.xaml.cs">
+      <DependentUpon>LanguageSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoLClientWatcher.cs" />
+    <Compile Include="LoLWatcher.cs" />
+    <Compile Include="Database\PrivateDatabaseManager.cs" />
+    <Compile Include="MovieConfiguration.xaml.cs">
+      <DependentUpon>MovieConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MovieCutter.xaml.cs">
+      <DependentUpon>MovieCutter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\PublicDatabaseManager.cs" />
+    <Compile Include="PopupWindow.xaml.cs">
+      <DependentUpon>PopupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupWindowStyles.xaml.cs">
+      <DependentUpon>PopupWindowStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RangeSelector.xaml.cs">
+      <DependentUpon>RangeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecordDetailPlayerBar.xaml.cs">
+      <DependentUpon>RecordDetailPlayerBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegionSelector.xaml.cs">
+      <DependentUpon>RegionSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalLinkControl.cs" />
+    <Compile Include="RiotAPI\BasicDataDto.cs" />
+    <Compile Include="RiotAPI\BasicDataStatsDto.cs" />
+    <Compile Include="RiotAPI\BlockDto.cs" />
+    <Compile Include="RiotAPI\BlockItemDto.cs" />
+    <Compile Include="RiotAPI\ChampionDto.cs" />
+    <Compile Include="RiotAPI\ChampionListDto.cs" />
+    <Compile Include="RiotAPI\ChampionSpellDto.cs" />
+    <Compile Include="RiotAPI\GoldDto.cs" />
+    <Compile Include="RiotAPI\ImageDto.cs" />
+    <Compile Include="RiotAPI\InfoDto.cs" />
+    <Compile Include="RiotAPI\ItemListDto.cs" />
+    <Compile Include="RiotAPI\ItemTreeDto.cs" />
+    <Compile Include="RiotAPI\LevelTipDto.cs" />
+    <Compile Include="RiotAPI\Mastery.cs" />
+    <Compile Include="RiotAPI\MetaDataDto.cs" />
+    <Compile Include="RiotAPI\Observer.cs" />
+    <Compile Include="RiotAPI\Participant.cs" />
+    <Compile Include="RiotAPI\PassiveDto.cs" />
+    <Compile Include="RiotAPI\RecommendedDto.cs" />
+    <Compile Include="RiotAPI\Services\NetworkException.cs" />
+    <Compile Include="RiotAPI\Services\Request.cs" />
+    <Compile Include="RiotAPI\RealmDto.cs" />
+    <Compile Include="RiotAPI\Rune.cs" />
+    <Compile Include="RiotAPI\Services\CurrentGame.cs" />
+    <Compile Include="RiotAPI\Services\Summoner.cs" />
+    <Compile Include="RiotAPI\Services\UnsupportedException.cs" />
+    <Compile Include="RiotAPI\SkinDto.cs" />
+    <Compile Include="RiotAPI\SpellVarsDto.cs" />
+    <Compile Include="RiotAPI\StatsDto.cs" />
+    <Compile Include="RiotAPI\SummonerDto.cs" />
+    <Compile Include="RiotAPI\SummonerSpellDto.cs" />
+    <Compile Include="RiotAPI\SummonerSpellListDto.cs" />
+    <Compile Include="SettingsSaver.cs" />
+    <Compile Include="ThirdPersonView.xaml.cs">
+      <DependentUpon>ThirdPersonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TriStateImageButton.xaml.cs">
+      <DependentUpon>TriStateImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VideoRecording\AudioRecorder.cs" />
+    <Compile Include="VideoRecording\AVMixer.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Converters.cs" />
+    <Compile Include="DataClasses\DetailStats.cs" />
+    <Compile Include="DownloadProgress.xaml.cs">
+      <DependentUpon>DownloadProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses\EndOfGameStats.cs" />
+    <Compile Include="ExtendedObservableCollection.cs" />
+    <Compile Include="FeaturedGamesManager.cs" />
+    <Compile Include="IFeaturedGamesQuery.cs" />
+    <Compile Include="JsonData\FeaturedGameBanned.cs" />
+    <Compile Include="LeagueOfLegendsAnalyzer.cs" />
+    <Compile Include="FeaturedGamesView.xaml.cs">
+      <DependentUpon>FeaturedGamesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileNameFormat.xaml.cs">
+      <DependentUpon>FileNameFormat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileNameGenerater.cs" />
+    <Compile Include="DataClasses\GameInfo.cs" />
+    <Compile Include="JsonData\FeaturedGameJson.cs" />
+    <Compile Include="JsonData\FeaturedGameParticipant.cs" />
+    <Compile Include="LanguageControl.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoLCommandAnalyzer.cs" />
+    <Compile Include="LoLLauncher.cs" />
+    <Compile Include="LoLRecorder.cs" />
+    <Compile Include="DataClasses\LoLRecord.cs" />
+    <Compile Include="LoLRecordPlayer.cs" />
+    <Compile Include="DataClasses\PlayerInfo.cs" />
+    <Compile Include="DataClasses\PlayerStats.cs" />
+    <Compile Include="NoData.xaml.cs">
+      <DependentUpon>NoData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlayFileListener.cs" />
+    <Compile Include="ProcedureTask.cs" />
+    <Compile Include="ProcessMemory.cs" />
+    <Compile Include="RecordDetail.xaml.cs">
+      <DependentUpon>RecordDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecordDetailPlayer.xaml.cs">
+      <DependentUpon>RecordDetailPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OneLineWindow.xaml.cs">
+      <DependentUpon>OneLineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecordMeta.xaml.cs">
+      <DependentUpon>RecordMeta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReplayManager.cs" />
+    <Compile Include="SimpleRecordView.xaml.cs">
+      <DependentUpon>SimpleRecordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleLoLRecord.cs" />
+    <Compile Include="CrashReporter.cs" />
+    <Compile Include="SingleFeaturedGameView.xaml.cs">
+      <DependentUpon>SingleFeaturedGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateNotifyWindow.xaml.cs">
+      <DependentUpon>UpdateNotifyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <Compile Include="VideoRecording\MoviePostProcessor.cs" />
+    <Compile Include="VideoRecording\QualityData.cs" />
+    <Compile Include="VideoRecording\VideoFormat.cs" />
+    <Compile Include="VideoRecording\VideoFormatGetter.cs" />
+    <Compile Include="VideoRecording\VideoGetter.cs" />
+    <Compile Include="VideoRecording\MovieRecordingController.cs" />
+    <Compile Include="WebClientExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="YesNoPopupWindow.xaml.cs">
+      <DependentUpon>YesNoPopupWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AboutBR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BugReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FeaturedGamesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileNameFormat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FirstPersonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LanguageSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lang\ar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\de.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\es-AR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\es.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\fi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\fr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\hr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\id.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\it.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\pl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\pt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\ro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\ru.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\sv.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\tr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\vi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\zh-TW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lang\en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MovieConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MovieCutter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NoData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopupWindowStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RangeSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordDetailPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OneLineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordDetailPlayerBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecordMeta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegionSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleRecordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingleFeaturedGameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThirdPersonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TriStateImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateNotifyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YesNoPopupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UI\SimpleRecord\Delete.png" />
+    <Resource Include="UI\SimpleRecord\Export.png" />
+    <Resource Include="UI\SimpleRecord\Play.png" />
+    <Resource Include="UI\SimpleRecord\Rename.png" />
+    <Resource Include="UI\Window\Mininum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconLpr.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\RecordDetail\ScordBoard_Blue.png" />
+    <Resource Include="UI\RecordDetail\ScordBoard_Purple.png" />
+    <Resource Include="UI\RecordDetail\A.png" />
+    <Resource Include="UI\RecordDetail\Champion.png" />
+    <Resource Include="UI\RecordDetail\D.png" />
+    <Resource Include="UI\RecordDetail\Gold.png" />
+    <Resource Include="UI\RecordDetail\Item.png" />
+    <Resource Include="UI\RecordDetail\K.png" />
+    <Resource Include="UI\RecordDetail\Lv.png" />
+    <Resource Include="UI\RecordDetail\Minions.png" />
+    <Resource Include="UI\RecordDetail\Spell1.png" />
+    <Resource Include="UI\RecordDetail\spell2.png" />
+    <Resource Include="UI\RecordDetail\Trinket.png" />
+    <Resource Include="UI\RecordDetail\Ward.png" />
+    <Resource Include="UI\Baron.png" />
+    <Resource Include="UI\Window\Close.png" />
+    <Resource Include="UI\Window\Maximum.png" />
+    <Resource Include="UI\Menu\FAQ.png" />
+    <Resource Include="UI\Menu\Settings.png" />
+    <Resource Include="UI\Menu\CommandLine.png" />
+    <Resource Include="UI\Menu\VideoRecordingMode.png" />
+    <Resource Include="UI\Menu\File.png" />
+    <Resource Include="UI\Error.png" />
+    <Resource Include="UI\Menu\FeaturedGames.png" />
+    <Resource Include="UI\Menu\ReplayList.png" />
+    <Resource Include="UI\Menu\Update.png" />
+    <Resource Include="UI\RecordDetail\WardKilled.png" />
+    <Resource Include="UI\Window\Facebook.png" />
+    <Resource Include="UI\Window\Home.png" />
+    <Resource Include="UI\Menu\Language.png" />
+    <Resource Include="UI\Window\Help.png" />
+    <Resource Include="UI\FeaturedGames\Refresh.png" />
+    <Resource Include="UI\ChampionDraws\Rammus.png" />
+    <Resource Include="UI\Menu\About.png" />
+    <Resource Include="UI\Menu\Favorite.png" />
+    <Resource Include="UI\ChampionDraws\Heimerdinger.png" />
+    <Resource Include="UI\SimpleRecord\Heart.png" />
+    <Resource Include="UI\Window\Sizer.png" />
+    <Resource Include="UI\SimpleRecord\Search.png" />
+    <Resource Include="UI\VideoRecording\Triangle.png" />
+    <Resource Include="UI\Window\PopupClose.png" />
+    <Resource Include="UI\RecordDetail\Turret.png" />
+    <Resource Include="UI\RecordDetail\Damage.png" />
+    <Resource Include="UI\RecordDetail\DamageTaken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\SimpleRecord\History.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參照此電腦中缺少的  NuGet 套件。啟用「NuGet 套件還原」以便下載。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案為 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

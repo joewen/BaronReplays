@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="BaronReplays.RecordDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BaronReplays"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Background="#FF1F232C" FontSize="12" Foreground="White" >
+    <UserControl.Resources>
+        <local:GameModeConverter x:Key="GameModeConverter"/>
+        <local:GameTypeConverter x:Key="GameTypeConverter"/>
+        <local:GameLengthConverter x:Key="GameLengthConverter"/>
+        <local:MapToImage x:Key="MapToImage"/>
+        <local:TeamToColor x:Key="TeamToColor"/>
+        <local:TeamToGridImagePath x:Key="TeamToGridImagePath"/>
+        <Style x:Key="DetailPlayerListStyle" TargetType="ItemsControl">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <local:RecordDetailPlayer/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Background="#FF171717" CornerRadius="5" HorizontalAlignment="Left" Width="150" Padding="10,0" Margin="5,0">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{Binding GameMode,Converter={StaticResource GameModeConverter}}" Margin="0,0,0,3"/>
+                        <TextBlock Text="{Binding GameType,Converter={StaticResource GameTypeConverter}}" Margin="0,3"/>
+                        <TextBlock Text="{Binding GameLength,Converter={StaticResource GameLengthConverter}}" Margin="0,3,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <ContentControl Grid.Column="1"  Template="{StaticResource RoundedObject}" Background="{Binding WonTeam,Converter={StaticResource TeamToColor}}">
+                    <TextBlock Text="{Binding WonTeamStr}" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </ContentControl>
+
+                <Grid Grid.Column="2" Margin="5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10,0,0,2">
+                        <ContentControl Template="{StaticResource RoundedObject}">
+                            <Rectangle Width="32" Height="32" Fill="{x:Static local:Constants.Purple}"/>
+                        </ContentControl>
+                        <ContentControl Template="{StaticResource RoundedObject}" Width="280" Background="#FF171717" Margin="10,0" FontSize="14" Height="32">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <TextBlock Text="{Binding PurpleTeamKDA}" VerticalAlignment="Center" Margin="15,0,0,0" Width="100"/>
+                                <Image Source="UI/RecordDetail/Ward.png" Width="24" Height="24"  VerticalAlignment="Center" Margin="5,0,2,0"/>
+                                <TextBlock Text="{Binding PurpleTeamWard[0]}" VerticalAlignment="Center" Width="25"/>
+                                <Image Source="UI/RecordDetail/WardKilled.png" Width="24" Height="24"  VerticalAlignment="Center" Margin="5,0,2,0"/>
+                                <TextBlock Text="{Binding PurpleTeamWard[1]}" VerticalAlignment="Center" Width="20"/>
+                                <Image Source="UI/RecordDetail/Turret.png" Width="24" Height="24"  VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                <TextBlock Text="{Binding PurpleTeamTurret}" VerticalAlignment="Center" Width="25"/>
+                            </StackPanel>
+                            
+                        </ContentControl>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,2,0,0">
+                        <ContentControl Template="{StaticResource RoundedObject}">
+                            <Rectangle Width="32" Height="32" Fill="{x:Static local:Constants.Blue}"/>
+                        </ContentControl>
+                        <ContentControl Template="{StaticResource RoundedObject}" Width="280" Background="#FF171717" Margin="10,0" FontSize="14" Height="32">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                                <TextBlock Text="{Binding BlueTeamKDA}" VerticalAlignment="Center" Margin="15,0,0,0" Width="100"/>
+                                <Image Source="UI/RecordDetail/Ward.png" Width="24" Height="24"  VerticalAlignment="Center" Margin="5,0,2,0"/>
+                                <TextBlock Text="{Binding BlueTeamWard[0]}" VerticalAlignment="Center" Width="25"/>
+                                <Image Source="UI/RecordDetail/WardKilled.png" Width="24" Height="24"  VerticalAlignment="Center" Margin="5,0,2,0"/>
+                                <TextBlock Text="{Binding BlueTeamWard[1]}" VerticalAlignment="Center" Width="20"/>
+                                <Image Source="UI/RecordDetail/Turret.png" Width="24" Height="24"  VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                <TextBlock Text="{Binding BlueTeamTurret}" VerticalAlignment="Center" Width="25"/>
+                            </StackPanel>
+
+                        </ContentControl>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+            <Border Style="{StaticResource RoundedClipBorder}" CornerRadius="5" Margin="5">
+                <StackPanel>
+                    <local:RecordDetailPlayerBar/>
+                    <ItemsControl Style="{StaticResource DetailPlayerListStyle}" ItemsSource="{Binding PurpleTeamPlayers}" Background="{x:Static local:Constants.Purple}"/>
+                        <ItemsControl Style="{StaticResource DetailPlayerListStyle}" ItemsSource="{Binding BlueTeamPlayers}" Background="{x:Static local:Constants.Blue}" Margin="0,10,0,0"/>
+                    
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+    
+</UserControl>

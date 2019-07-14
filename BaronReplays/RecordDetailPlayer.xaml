@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="BaronReplays.RecordDetailPlayer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BaronReplays"
+             xmlns:staticdata="clr-namespace:BaronReplays.LoLStaticData"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Padding="5,0,0,0" Margin="0,3" Foreground="White">
+
+    <UserControl.Resources>
+        <local:StringToChampionIcon x:Key="StringToChampionIcon"/>
+        <local:SpellNumberToSpellIcon x:Key="SpellNumberToSpellIcon"/>
+        <local:ItemNumberToIcon x:Key="ItemNumberToIcon"/>
+        <local:TeamToColor x:Key="TeamToColor"/>
+        <Style TargetType="Border" x:Key="ImageBorder"  BasedOn="{StaticResource RoundedClipBorder}">
+            <Setter Property="Background" Value="#FF171717"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="2,0"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+        </Style>
+        <Style TargetType="Border" x:Key="StatBorder" BasedOn="{StaticResource RoundedClipBorder}">
+            <Setter Property="Background" Value="#FF171717"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="Margin" Value="3,3"/>
+            <Setter Property="Width" Value="46"/>
+            <Setter Property="Padding" Value="3,0"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <Border Style="{StaticResource ImageBorder}"  Margin="3,0">
+            <Image  Source="{Binding SkinName, Converter={StaticResource StringToChampionIcon}}"/>
+        </Border>
+        <TextBlock Text="{Binding Statistics.Level}" FontSize="16" VerticalAlignment="Center" Margin="3,0,1,0" Width="24"/>
+
+        <TextBlock Text="{Binding SummonerName}"  Width="100" VerticalAlignment="Center" Grid.Row="1" TextTrimming="CharacterEllipsis" ToolTip="{Binding SummonerName}"/>
+
+        <TextBlock Text="{Binding Statistics.KDA}"  VerticalAlignment="Center" Margin="4,0" Width="65" ToolTip="{Binding Statistics.KDAValue}"/>
+
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item0, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item1, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item2, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item3, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item4, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item5, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}">
+            <Image Source="{Binding Statistics.Item6, Converter={StaticResource ItemNumberToIcon},IsAsync=False}"/>
+        </Border>
+        <Border Style="{StaticResource ImageBorder}" Margin="5,0,2,0">
+            <Image Source="{Binding Spell1Id, Converter={StaticResource SpellNumberToSpellIcon}}" />
+        </Border>
+        <Border Style="{StaticResource ImageBorder}" Margin="2,0,5,0">
+            <Image Source="{Binding Spell2Id, Converter={StaticResource SpellNumberToSpellIcon}}"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}">
+            <TextBlock Text="{Binding Statistics.KGoldEarned}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,2,0"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}" ToolTip="{Binding Statistics.MinionsKilledTotalString}">
+            <TextBlock Text="{Binding Statistics.MinionsKilledTotal}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}">
+            <TextBlock Text="{Binding Statistics.WardPlaced}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}">
+            <TextBlock Text="{Binding Statistics.WardKilled}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}">
+            <TextBlock Text="{Binding Statistics.TurretsKilled}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}">
+            <TextBlock Text="{Binding Statistics.DamegeDealt}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        <Border Style="{StaticResource StatBorder}">
+            <TextBlock Text="{Binding Statistics.DamegeTaken}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+    </StackPanel>
+</UserControl>
